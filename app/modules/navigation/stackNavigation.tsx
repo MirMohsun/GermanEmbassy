@@ -12,6 +12,7 @@ import { LanguagesView } from "../../views/languagesView";
 import { LegalView } from "../../views/legalView";
 import { ContactView } from "../../views/contactView";
 import { BookView } from "../../views/bookView";
+import { RouteView } from "../../views/routeView";
 
 const Stack = createStackNavigator();
 
@@ -37,6 +38,7 @@ export const MainStackNavigator: FC = () => {
             <Stack.Screen name={ROUTES.LegalView} component={LegalView} />
             <Stack.Screen name={ROUTES.ContactView} component={ContactView} />
             <Stack.Screen name={ROUTES.BookView} component={BookView} />
+            <Stack.Screen name={ROUTES.RouteView} component={RouteView} />
             <Stack.Screen name={ROUTES.LanguagesView} component={LanguagesView} />
             <Stack.Screen name={ROUTES.ArchitectsPreView} component={ArchitectsPreView} />
         </Stack.Navigator>

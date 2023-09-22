@@ -16,8 +16,8 @@ export const MainView: FC<Props> = memo(({ }: Props) => {
     const navigation: StackNavigationProp<any> = useNavigation();
 
     const onPressMenuItem = (goToScreen: string) => {
-        navigation.navigate(goToScreen);
-        //navigation.navigate(ROUTES.BookView)
+        //navigation.navigate(goToScreen);
+        navigation.navigate(ROUTES.RouteView)
     };
 
     return (
