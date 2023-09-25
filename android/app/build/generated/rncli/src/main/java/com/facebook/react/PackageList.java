@@ -23,6 +23,8 @@ import com.reactnativecommunity.netinfo.NetInfoPackage;
 import com.swmansion.gesturehandler.RNGestureHandlerPackage;
 // react-native-linear-gradient
 import com.BV.LinearGradient.LinearGradientPackage;
+// react-native-maps
+import com.rnmaps.maps.MapsPackage;
 // react-native-pager-view
 import com.reactnativepagerview.PagerViewPackage;
 // react-native-reanimated
@@ -84,6 +86,7 @@ public class PackageList {
       new NetInfoPackage(),
       new RNGestureHandlerPackage(),
       new LinearGradientPackage(),
+      new MapsPackage(),
       new PagerViewPackage(),
       new ReanimatedPackage(),
       new SafeAreaContextPackage(),
