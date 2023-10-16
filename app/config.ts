@@ -24,12 +24,12 @@ export const COLORS = {
 };
 
 export const Links = {
+  about: "about",
+  architectDetail: "architect",
+  architects: "architects",
+  building: "bina",
+  buildings: "bina-list",
+  contact: "contact",
   mainUrl: "https://api.germanheritageazerbaijan.az/api/v1/",
   routes: "routes",
-  architects: "architects",
-  architectDetail: "architect",
-  buildings: "bina-list",
-  building: "bina",
-  about: "about",
-  contact: "contact",
 };

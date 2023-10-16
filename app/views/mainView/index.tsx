@@ -1,4 +1,4 @@
-import React, { FC, useMemo, memo } from "react";
+import React, { FC, useMemo, memo, useEffect } from "react";
 import {
   View,
   Text,
@@ -13,8 +13,9 @@ import { COLORS } from "../../config";
 import { menuData } from "./menuData";
 import { MenuButton } from "../../components/menuButton";
 import { StackNavigationProp } from "@react-navigation/stack";
-import { ROUTES } from "../../modules/navigation/routes";
 import { DrawerNavigationProp } from "@react-navigation/drawer";
+import { useDispatch } from "react-redux";
+import { getRoutes } from "../../modules/saga/routes/action";
 
 interface Props {}
 
@@ -22,11 +23,16 @@ export const MainView: FC<Props> = memo(({}: Props) => {
   const styles = useMemo(() => getStyle(), []);
   const navigation: StackNavigationProp<any> = useNavigation();
   const drawerNavigation: DrawerNavigationProp<ParamListBase> = useNavigation();
+  const dispatch = useDispatch();
 
-  const onPressMenuItem = (goToScreen: string) => {
-    //navigation.navigate(goToScreen);
-    navigation.navigate(ROUTES.RouteView);
+  const onPressMenuItem = (goToScreen: string, title: string) => {
+    navigation.navigate(goToScreen, { title });
+    // navigation.navigate(ROUTES.RouteView);
   };
+
+  useEffect(() => {
+    dispatch(getRoutes());
+  }, []);
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.grayFour }}>
@@ -53,7 +59,7 @@ export const MainView: FC<Props> = memo(({}: Props) => {
               }}
             >
               <TouchableOpacity
-                onPress={() => onPressMenuItem(item.goTo)}
+                onPress={() => onPressMenuItem(item.goTo, item.title)}
                 style={styles.menuButton}
               >
                 {item.icon}

@@ -1,4 +1,4 @@
-import React, { FC, useMemo, memo } from "react";
+import React, { FC, useMemo, memo, useEffect } from "react";
 import {
   View,
   Text,
@@ -17,6 +17,9 @@ import { faker } from "@faker-js/faker";
 import { ROUTES } from "../../modules/navigation/routes";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { DrawerNavigationProp } from "@react-navigation/drawer";
+import { useDispatch } from "react-redux";
+import { getBuildings } from "../../modules/saga/buildings/action";
+import { useAppSelector } from "../../hooks/useAppSelector";
 
 interface Props {}
 
@@ -24,19 +27,13 @@ export const BuildingsView: FC<Props> = memo(({}: Props) => {
   const styles = useMemo(() => getStyle(), []);
   const navigation: StackNavigationProp<ParamListBase> = useNavigation();
   const drawerNavigation: DrawerNavigationProp<ParamListBase> = useNavigation();
+  const dispatch = useDispatch();
+  const { buildings } = useAppSelector((state) => state.Buildings);
 
-  const mockBuildings = Array.from({ length: 5 }, () => ({
-    images: Array.from({ length: 4 }, () => ({
-      link: faker.image.urlPicsumPhotos({ width: 184, height: 184 }),
-    })),
-    title: faker.location.streetAddress({ useFullAddress: true }),
-    architect: {
-      name: faker.person.fullName(),
-      img: faker.image.urlPicsumPhotos({ width: 86, height: 114 }),
-    },
-    date: "1960-02-08 - 2000-05-11",
-    info: faker.lorem.paragraphs({ min: 20, max: 150 }),
-  }));
+  useEffect(() => {
+    dispatch(getBuildings());
+  }, []);
+
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.grayFour }}>
@@ -53,7 +50,7 @@ export const BuildingsView: FC<Props> = memo(({}: Props) => {
         </View>
         <Text style={styles.welcome}>Buildings</Text>
         <FlatList
-          data={mockBuildings}
+          data={buildings?.data}
           numColumns={2}
           showsVerticalScrollIndicator={false}
           renderItem={({ item, index }) => (
@@ -72,7 +69,7 @@ export const BuildingsView: FC<Props> = memo(({}: Props) => {
                 }}
               >
                 <Image
-                  source={{ uri: item.images[0]?.link }}
+                  source={{ uri: item.main_img }}
                   style={{
                     width: "100%",
                     height: 184,
@@ -80,7 +77,7 @@ export const BuildingsView: FC<Props> = memo(({}: Props) => {
                   }}
                 />
                 <Text numberOfLines={2} style={styles.menuTitle}>
-                  {item.title}
+                  {item?.name}
                 </Text>
               </View>
             </TouchableOpacity>

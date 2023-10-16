@@ -1,4 +1,4 @@
-import React, { FC, useMemo, memo } from "react";
+import React, { FC, useMemo, memo, useEffect } from "react";
 import {
   View,
   Text,
@@ -17,6 +17,9 @@ import { faker } from "@faker-js/faker";
 import { ROUTES } from "../../modules/navigation/routes";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { DrawerNavigationProp } from "@react-navigation/drawer";
+import { useDispatch } from "react-redux";
+import { getArchitects } from "../../modules/saga/architects/action";
+import { useAppSelector } from "../../hooks/useAppSelector";
 
 interface Props {}
 
@@ -24,6 +27,12 @@ export const ArchitectsView: FC<Props> = memo(({}: Props) => {
   const styles = useMemo(() => getStyle(), []);
   const navigation: StackNavigationProp<ParamListBase> = useNavigation();
   const drawerNavigation: DrawerNavigationProp<ParamListBase> = useNavigation();
+  const dispatch = useDispatch();
+  const { architects } = useAppSelector((state) => state.Architects);
+
+  useEffect(() => {
+    dispatch(getArchitects());
+  }, []);
 
   const mockBuildings = Array.from({ length: 7 }, () => ({
     images: Array.from({ length: 4 }, () => ({
@@ -49,7 +58,7 @@ export const ArchitectsView: FC<Props> = memo(({}: Props) => {
         </View>
         <Text style={styles.welcome}>Architects</Text>
         <FlatList
-          data={mockBuildings}
+          data={architects}
           numColumns={2}
           showsVerticalScrollIndicator={false}
           renderItem={({ item, index }) => (
@@ -68,11 +77,11 @@ export const ArchitectsView: FC<Props> = memo(({}: Props) => {
                 }}
               >
                 <Image
-                  source={{ uri: item.images[0]?.link }}
+                  source={{ uri: item.gallery[0]?.src }}
                   style={styles.img}
                 />
                 <Text numberOfLines={2} style={styles.menuTitle}>
-                  {item.title}
+                  {item.name}
                 </Text>
               </View>
             </TouchableOpacity>
