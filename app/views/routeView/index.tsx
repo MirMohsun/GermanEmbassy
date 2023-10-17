@@ -1,8 +1,7 @@
 import React, { FC, useMemo, memo } from "react";
-import { SafeAreaView, View } from "react-native";
+import { Dimensions, SafeAreaView, StatusBar, View } from "react-native";
 import { getStyle } from "./styles";
 import { COLORS } from "../../config";
-import { RouteItem } from "../../components/routeItem";
 import { StationItem } from "../../components/stationItem";
 import MapView, { Marker, PROVIDER_GOOGLE } from "react-native-maps";
 import { MenuButton } from "../../components/menuButton";
@@ -15,8 +14,8 @@ import {
 import { StackNavigationProp } from "@react-navigation/stack";
 import { BackButton } from "../../components/backButton";
 import { useAppSelector } from "../../hooks/useAppSelector";
-import { IRoutes } from "../../modules/redux/routes";
 import { ROUTES } from "../../modules/navigation/routes";
+import { he } from "@faker-js/faker";
 
 interface Props {}
 
@@ -27,7 +26,8 @@ export const RouteView: FC<Props> = memo(({}: Props) => {
   const { routes } = useAppSelector((state) => state.Routes);
   const { params } = useRoute();
   const title = params?.title;
-
+  const { width, height } = Dimensions.get("screen");
+  const statusBarHeight = StatusBar.currentHeight;
   const dataExtractor = () => {
     for (const route of routes) {
       if (route.name === title) {
@@ -38,14 +38,20 @@ export const RouteView: FC<Props> = memo(({}: Props) => {
   };
 
   const data = dataExtractor();
-  console.log("data :>> ", data.stations[0].long);
-  console.log("data :>> ", data.stations[0].lat);
+  console.log("data :>> ", data?.stations[0]?.long);
+  console.log("data :>> ", data?.stations[0]?.lat);
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.grayFour }}>
+    <SafeAreaView
+      style={{
+        flex: 1,
+        backgroundColor: COLORS.grayFour,
+      }}
+    >
+      <StatusBar />
       <View
         style={{
           position: "absolute",
-          top: 20,
+          top: 20 + statusBarHeight,
           left: 20,
           zIndex: 10,
         }}
@@ -55,7 +61,7 @@ export const RouteView: FC<Props> = memo(({}: Props) => {
       <View
         style={{
           position: "absolute",
-          top: 20,
+          top: 20 + statusBarHeight,
           right: 20,
           zIndex: 10,
         }}
@@ -65,7 +71,10 @@ export const RouteView: FC<Props> = memo(({}: Props) => {
       {data ? (
         <MapView
           provider={PROVIDER_GOOGLE}
-          style={{ width: "100%", height: "80%" }}
+          style={{
+            width: width,
+            height: height * 0.8,
+          }}
           initialRegion={{
             latitude: data?.stations[0].lat,
             longitude: data?.stations[0].long,
