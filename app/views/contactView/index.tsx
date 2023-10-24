@@ -45,16 +45,6 @@ export const ContactView: FC<Props> = memo(({}: Props) => {
       info: contactsInfo.phone,
     },
     {
-      icon: <PhoneIcon />,
-      title: "Fax:",
-      info: contactsInfo.fax,
-    },
-    {
-      icon: "",
-      title: "Opening hours:",
-      info: contactsInfo.opening_hours,
-    },
-    {
       icon: <WebIcon />,
       title: "Site:",
       info: "http://www.baku.diplo.de",

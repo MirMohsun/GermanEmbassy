@@ -44,7 +44,8 @@ target 'GermanEmbassyBaku' do
     # Pods for testing
   end
   
-
+  pod 'rn-fetch-blob',
+  :path => '../node_modules/rn-fetch-blob'
 
 
   post_install do |installer|

@@ -3,6 +3,7 @@ import { SagaActionTypes } from "../SagaActionTypes";
 import { IAxios } from "../../../services/axios";
 import { Links } from "../../../config";
 import { BuildingsActions, IBuildings } from "../../redux/buildings";
+import { BookActions, IBook } from "../../redux/book";
 
 export function* workerGetBuildingsList() {
   try {
@@ -20,6 +21,24 @@ export function* workerGetBuildingsList() {
   }
 }
 
+export function* workerGetBook() {
+  try {
+    type result = Array<IBook>;
+
+    const res: result = yield call(IAxios.get, {
+      url: Links.book,
+      sender: "workerGetBuildingsList",
+    }) as any;
+    console.log("res", res);
+    if (res) {
+      yield put(BookActions._setBookInfo(res.data));
+    }
+  } catch (error) {
+    console.error(`workerGetBuildingsList: ${error}`);
+  }
+}
+
 export function* watchBuildings() {
   yield takeEvery(SagaActionTypes.GET_BUILDINGS, workerGetBuildingsList);
+  yield takeEvery(SagaActionTypes.GET_BOOK, workerGetBook);
 }

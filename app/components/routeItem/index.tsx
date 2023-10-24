@@ -1,4 +1,4 @@
-import React, { FC, useMemo, memo } from "react";
+import React, { FC, useMemo, memo, useEffect } from "react";
 import {
   TouchableOpacity,
   StyleProp,
@@ -19,6 +19,9 @@ interface Props {
   addressFrom: string;
   addressTo: string;
   containerStyle?: StyleProp<ViewStyle>;
+  distance: string;
+  time: string;
+  stationCount: number;
 }
 
 export const RouteItem: FC<Props> = memo(
@@ -28,21 +31,25 @@ export const RouteItem: FC<Props> = memo(
     name,
     addressFrom,
     addressTo,
-    ...props
+    distance,
+    time,
+    stationCount,
   }: Props) => {
     const styles = useMemo(() => getStyle(isRed), [isRed]);
 
     const locationItems = [
-      { icon: <View style={styles.circle} />, value: "9 station" },
-      { icon: <ClockIcon />, value: "20 min." },
-      { icon: <Path2Icon />, value: "12 km" },
+      {
+        icon: <View style={styles.circle} />,
+        value: `${stationCount} stations`,
+      },
+      { icon: <ClockIcon />, value: time },
+      { icon: <Path2Icon />, value: distance },
     ];
 
     return (
       <TouchableOpacity
         activeOpacity={1}
         style={[styles.container, containerStyle]}
-        {...props}
       >
         <View style={styles.titleWrapper}>
           <Text numberOfLines={1} style={styles.title}>

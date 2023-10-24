@@ -21,11 +21,6 @@ export const legalData = [
     info: "+994 12 465 41 28",
   },
   {
-    icon: "",
-    title: "Opening hours:",
-    info: "Mon.-Thu. 5 p.m. - 10 p.m., Fri. 2 p.m. - 10 p.m., Sat.-Sun 08:00 - 22:00",
-  },
-  {
     icon: <WebIcon />,
     title: "Site:",
     info: "http://www.baku.diplo.de",

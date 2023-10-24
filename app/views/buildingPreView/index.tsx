@@ -21,6 +21,7 @@ import LinearGradient from "react-native-linear-gradient";
 import { ArrowIcon } from "../../assets/svg/arrowIcon";
 import HTML from "react-native-render-html";
 import moment from "moment";
+import { CloseButton } from "../../components/closeButton";
 
 interface Props {
   route: RouteProp<any>;
@@ -70,13 +71,12 @@ export const BuildingPreView: FC<Props> = memo(({ route }: Props) => {
             showsHorizontalScrollIndicator={false}
             data={imgGallery}
             renderItem={({ item }) => {
-              console.log("item :>> ", item);
               return <Image source={{ uri: item }} style={styles.img} />;
             }}
           />
         ) : null}
         <View style={styles.backButtonWrapper}>
-          <BackButton />
+          <CloseButton />
         </View>
         <View style={styles.paginator}>
           {item.gallery ? (
@@ -106,19 +106,6 @@ export const BuildingPreView: FC<Props> = memo(({ route }: Props) => {
               </Text>
             </View>
           </View>
-          <Text numberOfLines={1} style={styles.label}>
-            LOCATION:
-          </Text>
-          <Text numberOfLines={3} style={styles.info}>
-            {item.name}
-          </Text>
-          <Text numberOfLines={1} style={{ ...styles.label, marginTop: 24 }}>
-            DATE:
-          </Text>
-          <Text numberOfLines={1} style={styles.date}>
-            {moment(item.architect.birth_date).format("DD.MM.YYYY")} -{" "}
-            {moment(item.architect.death_date).format("DD.MM.YYYY")}
-          </Text>
           <View style={styles.divider} />
           <Text numberOfLines={1} style={styles.label}>
             INFO:

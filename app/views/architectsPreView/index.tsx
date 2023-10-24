@@ -71,9 +71,6 @@ export const ArchitectsPreView: FC<Props> = memo(({ route }: Props) => {
         <View style={styles.backButtonWrapper}>
           <BackButton />
         </View>
-        <View style={styles.paginator}>
-          <Paginator {...{ data: item.gallery, progress, color: "#FFFFFF" }} />
-        </View>
       </View>
       <View style={styles.content}>
         <ScrollView
@@ -83,8 +80,8 @@ export const ArchitectsPreView: FC<Props> = memo(({ route }: Props) => {
         >
           <Text style={styles.title}>{item.title}</Text>
           <Text numberOfLines={1} style={styles.date}>
-            {moment(item.birth_date).format("DD.MM.YYYY")} -{" "}
-            {moment(item.death_date).format("DD.MM.YYYY")}
+            {moment(item.birth_date).format("YYYY")} -{" "}
+            {moment(item.death_date).format("YYYY")}
           </Text>
           <Text numberOfLines={1} style={styles.label}>
             INFO:

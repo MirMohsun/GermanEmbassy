@@ -6,6 +6,7 @@ import createSagaMiddleware from "redux-saga";
 import rootSaga from "../saga/rootSaga";
 import Buildings from "./buildings";
 import Routes from "./routes";
+import Book from "./book";
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -16,6 +17,7 @@ export const store = configureStore({
     Architects,
     Buildings,
     Routes,
+    Book,
   },
   middleware: [sagaMiddleware],
 });

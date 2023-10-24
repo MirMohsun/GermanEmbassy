@@ -22,6 +22,12 @@ export const menuData = [
     goTo: ROUTES.BookView,
     title: "Book pdf",
   },
+
+  {
+    icon: <BuildingIcon />,
+    goTo: ROUTES.BuildingsView,
+    title: "Buildings",
+  },
   {
     icon: <PeopleIcon />,
     goTo: ROUTES.ArchitectsView,
@@ -31,10 +37,5 @@ export const menuData = [
     icon: <GovernmentIcon />,
     goTo: ROUTES.AboutUsView,
     title: "About us",
-  },
-  {
-    icon: <BuildingIcon />,
-    goTo: ROUTES.BuildingsView,
-    title: "Buildings",
   },
 ];

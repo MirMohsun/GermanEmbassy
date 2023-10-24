@@ -16,6 +16,7 @@ import { StackNavigationProp } from "@react-navigation/stack";
 import { DrawerNavigationProp } from "@react-navigation/drawer";
 import { useDispatch } from "react-redux";
 import { getRoutes } from "../../modules/saga/routes/action";
+import { getBook } from "../../modules/saga/buildings/action";
 
 interface Props {}
 
@@ -32,6 +33,7 @@ export const MainView: FC<Props> = memo(({}: Props) => {
 
   useEffect(() => {
     dispatch(getRoutes());
+    dispatch(getBook());
   }, []);
 
   return (

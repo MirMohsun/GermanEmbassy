@@ -27,6 +27,7 @@ export const Links = {
   about: "about",
   architectDetail: "architect",
   architects: "architects",
+  book: "book",
   building: "bina",
   buildings: "bina-list",
   contact: "contact",
