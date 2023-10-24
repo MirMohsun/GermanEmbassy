@@ -1,4 +1,4 @@
-import React, { FC, useMemo, memo, useState } from "react";
+import React, { FC, useMemo, memo, useState, useEffect } from "react";
 import {
   Dimensions,
   SafeAreaView,
@@ -39,6 +39,13 @@ export const RouteView: FC<Props> = memo(({}: Props) => {
   const { width, height } = Dimensions.get("screen");
   const statusBarHeight = StatusBar.currentHeight;
   const google_Key = "AIzaSyA50vK_B6DpwnDzDpHrhlKJPJZFEemXOg0";
+  const [coordinateArray, setCoordinatesArray] = useState([]);
+  const [coordinates, setCoordinates] = useState([
+    {
+      latitude: 40.376982071917055,
+      longitude: 49.84803950030967,
+    },
+  ]);
 
   const dataExtractor = () => {
     for (const route of routes) {
@@ -50,22 +57,36 @@ export const RouteView: FC<Props> = memo(({}: Props) => {
   };
   const data = dataExtractor();
 
-  const [coordinates] = useState([
-    {
-      latitude: data?.stations[0].lat,
-      longitude: data?.stations[0].long,
-    },
-    {
-      latitude: data?.stations[0].lat,
-      longitude: data?.stations[0].long,
-    },
-  ]);
+  function extractCoordinates(inputArray: any[]) {
+    const resultArray = inputArray
+      .slice(1, -1)
+      .slice(0, 25)
+      .map((item: { lat: any; long: any }) => {
+        return {
+          latitude: item.lat,
+          longitude: item.long,
+        };
+      });
+    return resultArray;
+  }
+  useEffect(() => {
+    if (data.stations) {
+      let coordinatesArray = extractCoordinates(data.stations);
+      setCoordinatesArray(coordinatesArray);
+      setCoordinates([
+        {
+          latitude: data?.stations[0]?.lat,
+          longitude: data?.stations[0]?.long,
+        },
+        {
+          latitude: data?.stations[data.stations.length - 1]?.lat,
+          longitude: data?.stations[data.stations.length - 1]?.long,
+        },
+      ]);
+    }
+  }, [data]);
 
-  console.log(
-    "data?.stations[data.stations[0].length - 1]?.name",
-    data?.stations[data.stations.length - 1]?.name
-  );
-
+  console.log("data?.stations[0].lat", data?.stations[0]);
   return (
     <SafeAreaView
       style={{
@@ -95,7 +116,7 @@ export const RouteView: FC<Props> = memo(({}: Props) => {
         >
           <MenuButton onPress={() => drawerNavigation.openDrawer()} />
         </View>
-        {data?.stations[0] ? (
+        {data?.stations[0] && coordinates[0] ? (
           <>
             <MapView
               provider={PROVIDER_GOOGLE}
@@ -103,31 +124,30 @@ export const RouteView: FC<Props> = memo(({}: Props) => {
                 width: width,
                 height: height * 0.65,
               }}
+              mapType="terrain"
+              minZoomLevel={13}
               initialRegion={{
-                latitude: data?.stations[0].lat,
-                longitude: data?.stations[0].long,
-                latitudeDelta: 0,
-                longitudeDelta: 0,
+                latitude: parseFloat(coordinates[0].latitude),
+                longitude: parseFloat(coordinates[0].longitude),
+                latitudeDelta: 0.1,
+                longitudeDelta: 0.1,
               }}
             >
               <MapViewDirections
                 origin={coordinates[0]}
                 destination={coordinates[1]}
-                apikey={google_Key} // insert your API Key here
-                strokeWidth={4}
-                strokeColor="red"
+                apikey={google_Key}
+                waypoints={coordinateArray}
+                strokeWidth={12}
+                strokeColor={title !== "Route - A" ? "#E3001B" : "#3D39F0"}
               />
               {data.stations.map(
-                (item: {
-                  lat: any;
-                  long: any;
-                  building: { name: string | undefined };
-                }) => {
+                (item: { lat: any; long: any; building: { name: string } }) => {
                   return (
                     <Marker
                       coordinate={{
-                        latitude: item.lat,
-                        longitude: item.long,
+                        latitude: parseFloat(item.lat),
+                        longitude: parseFloat(item.long),
                       }}
                       onPress={() => modal.openModal(item)}
                       title={item.building.name}
@@ -138,7 +158,6 @@ export const RouteView: FC<Props> = memo(({}: Props) => {
             </MapView>
             {data.name && data?.stations
               ? data.stations.map((item: any, index: number) => {
-                  console.log("title", title);
                   return index === 0 ? (
                     <>
                       <RouteItem

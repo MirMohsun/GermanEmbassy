@@ -1,12 +1,5 @@
 import React, { FC, useMemo, useRef } from "react";
-import {
-  Image,
-  Modal,
-  Text,
-  TouchableOpacity,
-  View,
-  useWindowDimensions,
-} from "react-native";
+import { Image, Modal, Text, View, useWindowDimensions } from "react-native";
 import { getStyle } from "./styles";
 import { useDispatch } from "react-redux";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -15,11 +8,11 @@ import Animated, {
   useAnimatedScrollHandler,
   useSharedValue,
 } from "react-native-reanimated";
-import { Paginator } from "../../views/onBoardingView/paginator";
+import PaginationDot from "react-native-insta-pagination-dots";
 import { FONTS } from "../../config";
 import moment from "moment";
-import { BackButton } from "../backButton";
 import { CloseButton } from "../closeButton";
+
 interface Props {
   modal: {
     isVisible: boolean;
@@ -43,6 +36,7 @@ export const MapModal: FC<Props> = ({ modal }) => {
 
   const onScrollEvent = useAnimatedScrollHandler({
     onScroll: (event) => {
+      console.log("event", event);
       progress.value = event.contentOffset.x;
     },
   });
@@ -102,8 +96,9 @@ export const MapModal: FC<Props> = ({ modal }) => {
               ) : null}
               <View style={styles.paginator}>
                 {modal?.additionalData?.building?.gallery !== null ? (
-                  <Paginator
-                    {...{ data: imgGallery, progress, color: "#FFFFFF" }}
+                  <PaginationDot
+                    activeDotColor={"#FFF"}
+                    maxPage={imgGallery?.length}
                   />
                 ) : null}
               </View>

@@ -17,12 +17,15 @@ export const getStyle = (width: number, top: number) => {
       alignItems: "center",
     },
     paginator: {
-      width: width * 0.85,
+      height: 10,
       position: "absolute",
       zIndex: 10,
-      bottom: 40,
+      bottom: 10,
       left: 0,
       right: 0,
+      paddingRight: 25,
+      justifyContent: "center",
+      alignItems: "center",
     },
     modal: {
       backgroundColor: "#fff",
