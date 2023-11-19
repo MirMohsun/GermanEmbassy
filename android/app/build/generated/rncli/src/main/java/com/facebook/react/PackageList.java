@@ -19,6 +19,8 @@ import com.reactnativecommunity.art.ARTPackage;
 import org.reactnative.maskedview.RNCMaskedViewPackage;
 // @react-native-community/netinfo
 import com.reactnativecommunity.netinfo.NetInfoPackage;
+// react-native-fast-image
+import com.dylanvann.fastimage.FastImageViewPackage;
 // react-native-gesture-handler
 import com.swmansion.gesturehandler.RNGestureHandlerPackage;
 // react-native-linear-gradient
@@ -86,6 +88,7 @@ public class PackageList {
       new ARTPackage(),
       new RNCMaskedViewPackage(),
       new NetInfoPackage(),
+      new FastImageViewPackage(),
       new RNGestureHandlerPackage(),
       new LinearGradientPackage(),
       new MapsPackage(),

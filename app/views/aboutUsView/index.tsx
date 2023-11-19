@@ -12,19 +12,20 @@ import { useDispatch } from "react-redux";
 import { getAboutInfo } from "../../modules/saga/contactsInfo/action";
 import { useAppSelector } from "../../hooks/useAppSelector";
 import HTML from "react-native-render-html";
+import { useAppContext } from "../../services/config/configAppContext";
 
 interface Props {}
 
 export const AboutUsView: FC<Props> = memo(({}: Props) => {
   const styles = useMemo(() => getStyle(), []);
-  const info =
-    "The guideline for preventing corruption in the federal administration of July 30, 2004 (RL) determines the legal framework for the tasks of preventing corruption at the headquarters of the Federal Foreign Office and at the diplomatic missions abroad. The Directive aims to provide a guideline for integrity, fair and transparent administrative action in a way that is understandable and uses fewer regulations. Ethical principles and the rejection of corruption should be firmly anchored in the minds of the employees at the headquarters of the Federal Foreign Office and the seconded employees and local staff at the diplomatic missions abroad. Important concerns of corruption prevention at the headquarters of the Federal Foreign Office and at the foreign missions are raising employee awareness of the issue, protection against possible risks of corruption and the maintenance of high ethical and legal standards as an integral part of all administrative activities.";
   const navigation: StackNavigationProp<ParamListBase> = useNavigation();
   const drawerNavigation: DrawerNavigationProp<ParamListBase> = useNavigation();
   const dispatch = useDispatch();
   const { aboutInfo } = useAppSelector((state) => state.ContactsInfo);
 
-  console.log("aboutInfo :>> ", aboutInfo);
+  const {
+    LocalizationContext: { translation },
+  } = useAppContext();
 
   useEffect(() => {
     dispatch(getAboutInfo());
@@ -49,9 +50,8 @@ export const AboutUsView: FC<Props> = memo(({}: Props) => {
             <MenuButton onPress={() => drawerNavigation.openDrawer()} />
           </View>
           <GermanSymbol width={36} height={70} />
-          <Text style={styles.logoText}>{"German Embassy \nBaku"}</Text>
         </View>
-        <Text style={styles.welcome}>German Embassy Baku</Text>
+        <Text style={styles.welcome}>{translation("geb")}</Text>
         <ScrollView>
           <HTML tagsStyles={tagsStyles} source={{ html: aboutInfo.content }} />
         </ScrollView>

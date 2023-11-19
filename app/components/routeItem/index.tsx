@@ -12,6 +12,7 @@ import { useNavigation } from "@react-navigation/native";
 import { ArrowSecondIcon } from "../../assets/svg/arrowSecondIcon";
 import { ClockIcon } from "../../assets/svg/clockIcon";
 import { Path2Icon } from "../../assets/svg/path2icon";
+import { useAppContext } from "../../services/config/configAppContext";
 
 interface Props {
   isRed?: boolean;
@@ -37,10 +38,14 @@ export const RouteItem: FC<Props> = memo(
   }: Props) => {
     const styles = useMemo(() => getStyle(isRed), [isRed]);
 
+    const {
+      LocalizationContext: { translation },
+    } = useAppContext();
+
     const locationItems = [
       {
         icon: <View style={styles.circle} />,
-        value: `${stationCount} stations`,
+        value: `${stationCount} ${translation("stations")}`,
       },
       { icon: <ClockIcon />, value: time },
       { icon: <Path2Icon />, value: distance },
@@ -74,7 +79,7 @@ export const RouteItem: FC<Props> = memo(
           {locationItems.map(({ icon, value }, index) => (
             <View
               key={value}
-              style={[styles.itemWrapper, index == 1 && styles.middleWrapper]}
+              style={[index !== 0 ? styles.itemWrapper : styles.middleWrapper]}
             >
               {icon}
               <Text numberOfLines={1} style={styles.itemTitle}>

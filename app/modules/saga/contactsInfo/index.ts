@@ -1,4 +1,4 @@
-import { takeEvery, put, call } from "redux-saga/effects";
+import { takeEvery, put, call, select } from "redux-saga/effects";
 import { SagaActionTypes } from "../SagaActionTypes";
 import { IAxios } from "../../../services/axios";
 import { Links } from "../../../config";
@@ -11,11 +11,16 @@ import {
 export function* workerGetContactsInfo() {
   try {
     type result = IContacts | { error: string };
+    const lang = (yield select(
+      (state) => state.AppStateSlice.locale
+    )) as string;
 
     const res: result = yield call(IAxios.get, {
       url: Links.contact,
       sender: "workerGetContactsInfo",
+      locale: lang,
     }) as any;
+
     if (res?.email) {
       yield put(ContactsActions._setContactsInfo(res));
     }
@@ -27,10 +32,14 @@ export function* workerGetContactsInfo() {
 export function* workerGetAboutInfo() {
   try {
     type result = IAboutInfo | { error: string };
+    const lang = (yield select(
+      (state) => state.AppStateSlice.locale
+    )) as string;
 
     const res: result = yield call(IAxios.get, {
       url: Links.about,
       sender: "workerGetAboutInfo",
+      locale: lang,
     }) as any;
     if (res?.data !== undefined) {
       yield put(ContactsActions._setAboutInfo(res.data));

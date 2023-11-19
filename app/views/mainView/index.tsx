@@ -7,7 +7,11 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { getStyle } from "./styles";
-import { ParamListBase, useNavigation } from "@react-navigation/native";
+import {
+  ParamListBase,
+  useIsFocused,
+  useNavigation,
+} from "@react-navigation/native";
 import { GermanSymbol } from "../../assets/svg/germanSymbol";
 import { COLORS } from "../../config";
 import { menuData } from "./menuData";
@@ -17,6 +21,7 @@ import { DrawerNavigationProp } from "@react-navigation/drawer";
 import { useDispatch } from "react-redux";
 import { getRoutes } from "../../modules/saga/routes/action";
 import { getBook } from "../../modules/saga/buildings/action";
+import { useAppContext } from "../../services/config/configAppContext";
 
 interface Props {}
 
@@ -25,16 +30,21 @@ export const MainView: FC<Props> = memo(({}: Props) => {
   const navigation: StackNavigationProp<any> = useNavigation();
   const drawerNavigation: DrawerNavigationProp<ParamListBase> = useNavigation();
   const dispatch = useDispatch();
+  const isFocused = useIsFocused();
+  const {
+    LocalizationContext: { translation },
+  } = useAppContext();
 
   const onPressMenuItem = (goToScreen: string, title: string) => {
-    navigation.navigate(goToScreen, { title });
-    // navigation.navigate(ROUTES.RouteView);
+    navigation.navigate(goToScreen, {
+      title: title == "routeA" ? "Route - A" : "Route - B",
+    });
   };
 
   useEffect(() => {
     dispatch(getRoutes());
     dispatch(getBook());
-  }, []);
+  }, [isFocused]);
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.grayFour }}>
@@ -44,10 +54,9 @@ export const MainView: FC<Props> = memo(({}: Props) => {
             <MenuButton onPress={() => drawerNavigation.openDrawer()} />
           </View>
           <GermanSymbol width={36} height={70} />
-          <Text style={styles.logoText}>{"German Embassy \nBaku"}</Text>
         </View>
-        <Text style={styles.welcome}>Welcome</Text>
-        <Text style={styles.info}>Happy to see you again</Text>
+        <Text style={styles.welcome}>{translation("welcome")}</Text>
+        <Text style={styles.info}>{translation("seeUAgain")}</Text>
         <FlatList
           data={menuData}
           numColumns={2}
@@ -77,7 +86,7 @@ export const MainView: FC<Props> = memo(({}: Props) => {
                         : "#000000",
                   }}
                 >
-                  {item.title}
+                  {translation(item.title)}
                 </Text>
               </TouchableOpacity>
             </View>

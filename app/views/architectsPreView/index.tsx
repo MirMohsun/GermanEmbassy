@@ -3,7 +3,6 @@ import {
   View,
   Text,
   FlatList,
-  Image,
   TouchableOpacity,
   useWindowDimensions,
   ScrollView,
@@ -14,13 +13,14 @@ import Animated, {
   useAnimatedScrollHandler,
   useSharedValue,
 } from "react-native-reanimated";
-import { Paginator } from "../onBoardingView/paginator";
 import { BackButton } from "../../components/backButton";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import LinearGradient from "react-native-linear-gradient";
 import { ArrowIcon } from "../../assets/svg/arrowIcon";
 import HTML from "react-native-render-html";
 import moment from "moment";
+import { useAppContext } from "../../services/config/configAppContext";
+import FastImage from "react-native-fast-image";
 
 interface Props {
   route: RouteProp<any>;
@@ -37,6 +37,10 @@ export const ArchitectsPreView: FC<Props> = memo(({ route }: Props) => {
     () => getStyle(width, top, isMore),
     [width, top, isMore]
   );
+
+  const {
+    LocalizationContext: { translation },
+  } = useAppContext();
 
   const tagsStyles = {
     p: {
@@ -65,7 +69,13 @@ export const ArchitectsPreView: FC<Props> = memo(({ route }: Props) => {
           showsHorizontalScrollIndicator={false}
           data={item.gallery}
           renderItem={({ item }) => (
-            <Image source={{ uri: item.src }} style={styles.img} />
+            <FastImage
+              style={styles.img}
+              source={{
+                uri: item.src,
+                priority: FastImage.priority.normal,
+              }}
+            />
           )}
         />
         <View style={styles.backButtonWrapper}>
@@ -78,13 +88,13 @@ export const ArchitectsPreView: FC<Props> = memo(({ route }: Props) => {
           style={{ marginTop: 20 }}
           contentContainerStyle={{ paddingBottom: isMore ? 140 : 30 }}
         >
-          <Text style={styles.title}>{item.title}</Text>
+          <Text style={styles.title}>{item.name}</Text>
           <Text numberOfLines={1} style={styles.date}>
             {moment(item.birth_date).format("YYYY")} -{" "}
             {moment(item.death_date).format("YYYY")}
           </Text>
           <Text numberOfLines={1} style={styles.label}>
-            INFO:
+            {translation("info").toUpperCase()}:
           </Text>
           <HTML tagsStyles={tagsStyles} source={{ html: item.info }} />
           <LinearGradient

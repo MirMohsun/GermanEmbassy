@@ -12,73 +12,102 @@ import { LockIcon } from "../../assets/svg/lockIcon";
 import { ContactIcon } from "../../assets/svg/contactIcon";
 import { LanguageIcon } from "../../assets/svg/languageIcon";
 import { ShareIcon } from "../../assets/svg/shareIcon";
+import { useAppContext } from "../../services/config/configAppContext";
+import { Path3Icon } from "../../assets/svg/path3Icon";
 
 export const CustomDrawerContent = () => {
   const navigation: StackNavigationProp<any> = useNavigation();
 
+  const {
+    LocalizationContext: { translation },
+  } = useAppContext();
+
+  const onPressMenuItem = (goToScreen: string, title: string) => {
+    console.log("goToScreen", goToScreen);
+    navigation.navigate(goToScreen, {
+      title: title == "routeA" ? "Route - A" : "Route - B",
+    });
+  };
+
   return (
     <View>
       <View style={styles.headerContainer}>
-        <Text style={styles.title}>Hello!</Text>
+        <Text style={styles.title}>{translation("hello")}</Text>
       </View>
       <View style={styles.buttonsContainer}>
         <TouchableOpacity
           style={styles.drawerButton}
-          onPress={() => navigation.navigate(ROUTES.BookView)}
+          onPress={() => onPressMenuItem(ROUTES.RouteView, "routeA")}
+        >
+          <Path3Icon />
+          <Text style={styles.buttonTitle}>{translation("routeA")}</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.drawerButton}
+          onPress={() => onPressMenuItem(ROUTES.RouteView, "routeB")}
+        >
+          <Path3Icon color="#F03939" />
+          <Text style={styles.buttonTitle}>{translation("routeB")}</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.drawerButton}
+          onPress={() => onPressMenuItem(ROUTES.RouteView, "routeB")}
         >
           <BookIcon />
-          <Text style={styles.buttonTitle}>Book pdf</Text>
+          <Text style={styles.buttonTitle}>{translation("book")}</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.drawerButton}
           onPress={() => navigation.navigate(ROUTES.ArchitectsView)}
         >
           <PeopleIcon />
-          <Text style={styles.buttonTitle}>Architects</Text>
+          <Text style={styles.buttonTitle}>{translation("architect")}</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.drawerButton}
           onPress={() => navigation.navigate(ROUTES.BuildingsView)}
         >
           <BuildingIcon />
-          <Text style={styles.buttonTitle}>Buildings</Text>
+          <Text style={styles.buttonTitle}>{translation("building")}</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.drawerButton}
           onPress={() => navigation.navigate(ROUTES.AboutUsView)}
         >
           <GovernmentIcon />
-          <Text style={styles.buttonTitle}>About us</Text>
+          <Text style={styles.buttonTitle}>{translation("aboutUs")}</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.drawerButton}
           onPress={() => navigation.navigate(ROUTES.LanguagesView)}
         >
           <LanguageIcon />
-          <Text style={styles.buttonTitle}>Language</Text>
+          <Text style={styles.buttonTitle}>{translation("lang")}</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.drawerButton}
           onPress={() => navigation.navigate(ROUTES.ContactView)}
         >
           <ContactIcon />
-          <Text style={styles.buttonTitle}>Contact us</Text>
+          <Text style={styles.buttonTitle}>{translation("contactUs")}</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.drawerButton}
           onPress={() => navigation.navigate(ROUTES.LegalView)}
         >
           <LockIcon />
-          <Text style={styles.buttonTitle}>Legal</Text>
+          <Text style={styles.buttonTitle}>{translation("legal")}</Text>
         </TouchableOpacity>
       </View>
       <View style={styles.bottomContainer}>
         <ShareIcon />
         <Text style={[styles.bottomTitle, { marginLeft: 8 }]}>
-          Share with your friend
+          {translation("share")}
         </Text>
         <Text style={[styles.bottomTitle, { marginHorizontal: 8 }]}>-</Text>
-        <Text style={styles.bottomTitle}>App version 21.03.1</Text>
+        <Text style={styles.bottomTitle}>
+          {translation("appVersion")} 0.0.1
+        </Text>
       </View>
     </View>
   );
@@ -103,6 +132,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     marginLeft: 12,
+    marginVertical: 2,
   },
   buttonTitle: {
     fontFamily: FONTS.sfpBold,
@@ -110,7 +140,7 @@ const styles = StyleSheet.create({
     fontWeight: "500",
     lineHeight: 17,
     letterSpacing: 0,
-    textAlign: "left",
+    textAlign: "center",
     color: COLORS.black,
   },
   buttonsContainer: {
@@ -145,6 +175,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     verticalAlign: "bottom",
-    marginTop: 80,
+    marginTop: 40,
   },
 });

@@ -43,7 +43,7 @@ export const getStyle = (width: number, top: number, isMore: boolean) => {
     },
     title: {
       fontSize: 32,
-      marginTop: 44,
+      marginTop: 20,
       color: "#272830",
       fontFamily: FONTS.sfpBold,
     },

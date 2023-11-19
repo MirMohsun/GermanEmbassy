@@ -1,20 +1,19 @@
 import { StyleSheet } from "react-native";
-import { COLORS } from "../../config";
+import { COLORS, FONTS } from "../../config";
 
 export const getStyle = (width: number, top: number) => {
   const styles = StyleSheet.create({
     container: {
-      position: "absolute",
-      flex: 1,
-      justifyContent: "center",
-      alignItems: "center",
-      // backgroundColor: "rgba(0, 0, 0, 0.5)"
-      backgroundColor: "white",
+      width: "90%",
+      backgroundColor: "#FFF",
+      alignSelf: "center",
+      borderRadius: 16,
     },
     overlay: {
       flex: 1,
-      justifyContent: "center",
       alignItems: "center",
+      justifyContent: "center",
+      backgroundColor: "rgba(0,0,0,0.5)",
     },
     paginator: {
       height: 10,
@@ -26,6 +25,9 @@ export const getStyle = (width: number, top: number) => {
       paddingRight: 25,
       justifyContent: "center",
       alignItems: "center",
+      alignSelf: "center",
+      flexDirection: "row",
+      marginLeft: 25,
     },
     modal: {
       backgroundColor: "#fff",
@@ -54,6 +56,36 @@ export const getStyle = (width: number, top: number) => {
       zIndex: 10,
       top: -10,
       right: -8,
+    },
+    titleContainer: { width: "90%", alignSelf: "center" },
+    title: {
+      fontFamily: FONTS.sfpMedium,
+      fontSize: 18,
+      fontWeight: "700",
+      lineHeight: 21,
+      letterSpacing: 0.01,
+      textAlign: "left",
+      color: COLORS.black,
+    },
+    rowContainer: { flexDirection: "row", marginVertical: 12 },
+    rowLeft: {
+      fontFamily: FONTS.sfpRegular,
+      fontSize: 14,
+      fontWeight: "bold",
+      lineHeight: 17,
+      letterSpacing: 0.04,
+      textAlign: "left",
+      color: COLORS.black,
+    },
+    rowRight: {
+      fontFamily: FONTS.sfpRegular,
+      fontSize: 14,
+      fontWeight: "600",
+      lineHeight: 17,
+      letterSpacing: 0.04,
+      textAlign: "left",
+      marginLeft: 4,
+      marginBottom: 4,
     },
   });
   return styles;

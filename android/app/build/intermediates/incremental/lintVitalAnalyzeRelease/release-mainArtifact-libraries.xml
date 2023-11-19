@@ -39,19 +39,6 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="/Users/admin/Desktop/GermanEmbassy/android@@:react-native-maps::release"
-      jars="/Users/admin/Desktop/GermanEmbassy/node_modules/react-native-maps/android/build/.transforms/23e698e81635fff8142fc34e8fd85b00/transformed/out/jars/classes.jar:/Users/admin/Desktop/GermanEmbassy/node_modules/react-native-maps/android/build/.transforms/23e698e81635fff8142fc34e8fd85b00/transformed/out/jars/libs/R.jar"
-      resolved="GermanEmbassyBaku:react-native-maps:unspecified"
-      folder="/Users/admin/Desktop/GermanEmbassy/node_modules/react-native-maps/android/build/.transforms/23e698e81635fff8142fc34e8fd85b00/transformed/out"
-      manifest="AndroidManifest.xml"
-      resFolder="res"
-      assetsFolder="assets"
-      lintJar="lint.jar"
-      publicResources="public.txt"
-      symbolFile="R.txt"
-      externalAnnotations="annotations.zip"
-      proguardRules="proguard.txt"/>
-  <library
       name="com.facebook.react:hermes-android:0.72.4:release@aar"
       jars="/Users/admin/.gradle/caches/transforms-3/b5e8aa8676c65fc8a2efaecca69bd19f/transformed/jetified-hermes-android-0.72.4-release/jars/classes.jar"
       resolved="com.facebook.react:hermes-android:0.72.4"
@@ -104,6 +91,19 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
+      name="/Users/admin/Desktop/GermanEmbassy/android@@:react-native-fast-image::release"
+      jars="/Users/admin/Desktop/GermanEmbassy/node_modules/react-native-fast-image/android/build/.transforms/e089f3bca26edd9cff3f2a6e6f3ac03e/transformed/out/jars/classes.jar:/Users/admin/Desktop/GermanEmbassy/node_modules/react-native-fast-image/android/build/.transforms/e089f3bca26edd9cff3f2a6e6f3ac03e/transformed/out/jars/libs/R.jar"
+      resolved="GermanEmbassyBaku:react-native-fast-image:unspecified"
+      folder="/Users/admin/Desktop/GermanEmbassy/node_modules/react-native-fast-image/android/build/.transforms/e089f3bca26edd9cff3f2a6e6f3ac03e/transformed/out"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
       name="/Users/admin/Desktop/GermanEmbassy/android@@:react-native-gesture-handler::release"
       jars="/Users/admin/Desktop/GermanEmbassy/node_modules/react-native-gesture-handler/android/build/.transforms/22c77d4ef24874217a297f689447bad0/transformed/out/jars/classes.jar:/Users/admin/Desktop/GermanEmbassy/node_modules/react-native-gesture-handler/android/build/.transforms/22c77d4ef24874217a297f689447bad0/transformed/out/jars/libs/R.jar"
       resolved="GermanEmbassyBaku:react-native-gesture-handler:unspecified"
@@ -121,6 +121,19 @@
       jars="/Users/admin/Desktop/GermanEmbassy/node_modules/react-native-linear-gradient/android/build/.transforms/257c24f8c6bf963263e2235e38689e91/transformed/out/jars/classes.jar:/Users/admin/Desktop/GermanEmbassy/node_modules/react-native-linear-gradient/android/build/.transforms/257c24f8c6bf963263e2235e38689e91/transformed/out/jars/libs/R.jar"
       resolved="GermanEmbassyBaku:react-native-linear-gradient:unspecified"
       folder="/Users/admin/Desktop/GermanEmbassy/node_modules/react-native-linear-gradient/android/build/.transforms/257c24f8c6bf963263e2235e38689e91/transformed/out"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
+      name="/Users/admin/Desktop/GermanEmbassy/android@@:react-native-maps::release"
+      jars="/Users/admin/Desktop/GermanEmbassy/node_modules/react-native-maps/android/build/.transforms/23e698e81635fff8142fc34e8fd85b00/transformed/out/jars/classes.jar:/Users/admin/Desktop/GermanEmbassy/node_modules/react-native-maps/android/build/.transforms/23e698e81635fff8142fc34e8fd85b00/transformed/out/jars/libs/R.jar"
+      resolved="GermanEmbassyBaku:react-native-maps:unspecified"
+      folder="/Users/admin/Desktop/GermanEmbassy/node_modules/react-native-maps/android/build/.transforms/23e698e81635fff8142fc34e8fd85b00/transformed/out"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -804,10 +817,36 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="androidx.viewpager2:viewpager2:1.0.0@aar"
-      jars="/Users/admin/.gradle/caches/transforms-3/6e03b5b30ab8d32de4d353a377049712/transformed/jetified-viewpager2-1.0.0/jars/classes.jar"
-      resolved="androidx.viewpager2:viewpager2:1.0.0"
-      folder="/Users/admin/.gradle/caches/transforms-3/6e03b5b30ab8d32de4d353a377049712/transformed/jetified-viewpager2-1.0.0"
+      name="com.github.bumptech.glide:okhttp3-integration:4.12.0@aar"
+      jars="/Users/admin/.gradle/caches/transforms-3/ccfe3efd6da13a93d92fd283b5296a29/transformed/jetified-okhttp3-integration-4.12.0/jars/classes.jar"
+      resolved="com.github.bumptech.glide:okhttp3-integration:4.12.0"
+      folder="/Users/admin/.gradle/caches/transforms-3/ccfe3efd6da13a93d92fd283b5296a29/transformed/jetified-okhttp3-integration-4.12.0"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
+      name="com.github.bumptech.glide:glide:4.12.0@aar"
+      jars="/Users/admin/.gradle/caches/transforms-3/9c13fb8ac45a4195959d9e66a9748226/transformed/jetified-glide-4.12.0/jars/classes.jar"
+      resolved="com.github.bumptech.glide:glide:4.12.0"
+      folder="/Users/admin/.gradle/caches/transforms-3/9c13fb8ac45a4195959d9e66a9748226/transformed/jetified-glide-4.12.0"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
+      name="com.google.android.gms:play-services-maps:18.0.2@aar"
+      jars="/Users/admin/.gradle/caches/transforms-3/7aaa24db05666c76a81614ffa0385e54/transformed/jetified-play-services-maps-18.0.2/jars/classes.jar"
+      resolved="com.google.android.gms:play-services-maps:18.0.2"
+      folder="/Users/admin/.gradle/caches/transforms-3/7aaa24db05666c76a81614ffa0385e54/transformed/jetified-play-services-maps-18.0.2"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -830,10 +869,10 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="com.google.android.gms:play-services-tasks:18.0.1@aar"
-      jars="/Users/admin/.gradle/caches/transforms-3/ac8c61817d7c0cda51777101f907c084/transformed/jetified-play-services-tasks-18.0.1/jars/classes.jar"
-      resolved="com.google.android.gms:play-services-tasks:18.0.1"
-      folder="/Users/admin/.gradle/caches/transforms-3/ac8c61817d7c0cda51777101f907c084/transformed/jetified-play-services-tasks-18.0.1"
+      name="com.google.android.gms:play-services-base:18.1.0@aar"
+      jars="/Users/admin/.gradle/caches/transforms-3/1876e2a37e9dad33ee2aa885ea801eeb/transformed/jetified-play-services-base-18.1.0/jars/classes.jar"
+      resolved="com.google.android.gms:play-services-base:18.1.0"
+      folder="/Users/admin/.gradle/caches/transforms-3/1876e2a37e9dad33ee2aa885ea801eeb/transformed/jetified-play-services-base-18.1.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -843,10 +882,36 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="com.google.android.gms:play-services-basement:18.0.0@aar"
-      jars="/Users/admin/.gradle/caches/transforms-3/17852caaf0e8d38a6fad3807ca882c85/transformed/jetified-play-services-basement-18.0.0/jars/classes.jar"
-      resolved="com.google.android.gms:play-services-basement:18.0.0"
-      folder="/Users/admin/.gradle/caches/transforms-3/17852caaf0e8d38a6fad3807ca882c85/transformed/jetified-play-services-basement-18.0.0"
+      name="androidx.viewpager2:viewpager2:1.0.0@aar"
+      jars="/Users/admin/.gradle/caches/transforms-3/6e03b5b30ab8d32de4d353a377049712/transformed/jetified-viewpager2-1.0.0/jars/classes.jar"
+      resolved="androidx.viewpager2:viewpager2:1.0.0"
+      folder="/Users/admin/.gradle/caches/transforms-3/6e03b5b30ab8d32de4d353a377049712/transformed/jetified-viewpager2-1.0.0"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
+      name="com.google.android.gms:play-services-tasks:18.0.2@aar"
+      jars="/Users/admin/.gradle/caches/transforms-3/8b7e94803d3e6e33fb37f15eedeff8c5/transformed/jetified-play-services-tasks-18.0.2/jars/classes.jar"
+      resolved="com.google.android.gms:play-services-tasks:18.0.2"
+      folder="/Users/admin/.gradle/caches/transforms-3/8b7e94803d3e6e33fb37f15eedeff8c5/transformed/jetified-play-services-tasks-18.0.2"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
+      name="com.google.android.gms:play-services-basement:18.1.0@aar"
+      jars="/Users/admin/.gradle/caches/transforms-3/583792d2258f161199baa18f314df075/transformed/jetified-play-services-basement-18.1.0/jars/classes.jar"
+      resolved="com.google.android.gms:play-services-basement:18.1.0"
+      folder="/Users/admin/.gradle/caches/transforms-3/583792d2258f161199baa18f314df075/transformed/jetified-play-services-basement-18.1.0"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
@@ -947,19 +1012,6 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="com.google.maps.android:android-maps-utils:3.4.0@aar"
-      jars="/Users/admin/.gradle/caches/transforms-3/2d606110de9e2d27951eca03a49fb009/transformed/jetified-android-maps-utils-3.4.0/jars/classes.jar"
-      resolved="com.google.maps.android:android-maps-utils:3.4.0"
-      folder="/Users/admin/.gradle/caches/transforms-3/2d606110de9e2d27951eca03a49fb009/transformed/jetified-android-maps-utils-3.4.0"
-      manifest="AndroidManifest.xml"
-      resFolder="res"
-      assetsFolder="assets"
-      lintJar="lint.jar"
-      publicResources="public.txt"
-      symbolFile="R.txt"
-      externalAnnotations="annotations.zip"
-      proguardRules="proguard.txt"/>
-  <library
       name="androidx.core:core-ktx:1.6.0@aar"
       jars="/Users/admin/.gradle/caches/transforms-3/137d08d122a53f67c37a4c432ebf7d4e/transformed/jetified-core-ktx-1.6.0/jars/classes.jar"
       resolved="androidx.core:core-ktx:1.6.0"
@@ -1015,6 +1067,32 @@
       name="androidx.resourceinspection:resourceinspection-annotation:1.0.0@jar"
       jars="/Users/admin/.gradle/caches/modules-2/files-2.1/androidx.resourceinspection/resourceinspection-annotation/1.0.0/8c21f8ff5d96d5d52c948707f7e4d6ca6773feef/resourceinspection-annotation-1.0.0.jar"
       resolved="androidx.resourceinspection:resourceinspection-annotation:1.0.0"/>
+  <library
+      name="com.github.bumptech.glide:gifdecoder:4.12.0@aar"
+      jars="/Users/admin/.gradle/caches/transforms-3/ffacd486f1f7e4e9e60101b48b96f4ba/transformed/jetified-gifdecoder-4.12.0/jars/classes.jar"
+      resolved="com.github.bumptech.glide:gifdecoder:4.12.0"
+      folder="/Users/admin/.gradle/caches/transforms-3/ffacd486f1f7e4e9e60101b48b96f4ba/transformed/jetified-gifdecoder-4.12.0"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
+      name="androidx.exifinterface:exifinterface:1.2.0@aar"
+      jars="/Users/admin/.gradle/caches/transforms-3/f2da756ff3294b7f87be3b7391447475/transformed/exifinterface-1.2.0/jars/classes.jar"
+      resolved="androidx.exifinterface:exifinterface:1.2.0"
+      folder="/Users/admin/.gradle/caches/transforms-3/f2da756ff3294b7f87be3b7391447475/transformed/exifinterface-1.2.0"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
   <library
       name="androidx.room:room-runtime:2.2.5@aar"
       jars="/Users/admin/.gradle/caches/transforms-3/01f1dbe2bd627ec39f37d5106db390e0/transformed/room-runtime-2.2.5/jars/classes.jar"
@@ -1088,6 +1166,27 @@
       name="androidx.room:room-common:2.2.5@jar"
       jars="/Users/admin/.gradle/caches/modules-2/files-2.1/androidx.room/room-common/2.2.5/f5e3b73a0c2ab5e276e26868e4ce3542baede207/room-common-2.2.5.jar"
       resolved="androidx.room:room-common:2.2.5"/>
+  <library
+      name="com.google.maps.android:android-maps-utils:3.4.0@aar"
+      jars="/Users/admin/.gradle/caches/transforms-3/2d606110de9e2d27951eca03a49fb009/transformed/jetified-android-maps-utils-3.4.0/jars/classes.jar"
+      resolved="com.google.maps.android:android-maps-utils:3.4.0"
+      folder="/Users/admin/.gradle/caches/transforms-3/2d606110de9e2d27951eca03a49fb009/transformed/jetified-android-maps-utils-3.4.0"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
+      name="com.github.bumptech.glide:disklrucache:4.12.0@jar"
+      jars="/Users/admin/.gradle/caches/modules-2/files-2.1/com.github.bumptech.glide/disklrucache/4.12.0/6d44c9103551e3ff51f00ac26077c143a8fb74f9/disklrucache-4.12.0.jar"
+      resolved="com.github.bumptech.glide:disklrucache:4.12.0"/>
+  <library
+      name="com.github.bumptech.glide:annotations:4.12.0@jar"
+      jars="/Users/admin/.gradle/caches/modules-2/files-2.1/com.github.bumptech.glide/annotations/4.12.0/298d793db124809d74ad9a90de5eddc408898c84/annotations-4.12.0.jar"
+      resolved="com.github.bumptech.glide:annotations:4.12.0"/>
   <library
       name="com.google.guava:listenablefuture:1.0@jar"
       jars="/Users/admin/.gradle/caches/modules-2/files-2.1/com.google.guava/listenablefuture/1.0/c949a840a6acbc5268d088e47b04177bf90b3cad/listenablefuture-1.0.jar"

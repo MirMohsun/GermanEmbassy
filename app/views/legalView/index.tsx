@@ -9,6 +9,7 @@ import { BackButton } from "../../components/backButton";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { legalData } from "./legalData";
 import { DrawerNavigationProp } from "@react-navigation/drawer";
+import { useAppContext } from "../../services/config/configAppContext";
 
 interface Props {}
 
@@ -16,6 +17,9 @@ export const LegalView: FC<Props> = memo(({}: Props) => {
   const styles = useMemo(() => getStyle(), []);
   const navigation: StackNavigationProp<ParamListBase> = useNavigation();
   const drawerNavigation: DrawerNavigationProp<ParamListBase> = useNavigation();
+  const {
+    LocalizationContext: { translation },
+  } = useAppContext();
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.grayFour }}>
@@ -28,9 +32,8 @@ export const LegalView: FC<Props> = memo(({}: Props) => {
             <MenuButton onPress={() => drawerNavigation.openDrawer()} />
           </View>
           <GermanSymbol width={36} height={70} />
-          <Text style={styles.logoText}>{"German Embassy \nBaku"}</Text>
         </View>
-        <Text style={styles.welcome}>Legal</Text>
+        <Text style={styles.welcome}>{translation("legal")}</Text>
         <ScrollView>
           {legalData.map(({ title, info }, index) => (
             <View key={index}>

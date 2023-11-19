@@ -10,7 +10,7 @@ interface AxiosOptions {
   timeoutMS?: number;
   pureData?: boolean;
   params?: any;
-  isNoToken?: boolean;
+  locale?: string;
 }
 
 type AxiosPost = Omit<AxiosOptions, "params"> & { data: any };
@@ -26,7 +26,7 @@ const post = async ({
   headers,
   timeoutMS,
   pureData,
-  isNoToken,
+  locale,
 }: AxiosPost): Promise<any> => {
   try {
     const config: any = {
@@ -35,17 +35,12 @@ const post = async ({
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
+        lang: locale,
       },
       validateStatus: () => true,
       timeout: timeoutMS || 30000,
     };
-    !isNoToken &&
-      token &&
-      (config.headers = {
-        ...config.headers,
-        ...headers,
-        Authorization: `Bearer ${token}`,
-      });
+
     headers && (config.headers = { ...config.headers, ...headers });
     if (data) {
       pureData ? (config.data = data) : (config.data = JSON.stringify(data));
@@ -66,6 +61,7 @@ const get = async ({
   params,
   headers,
   timeoutMS,
+  locale,
 }: AxiosGet): Promise<any> => {
   try {
     const config: any = {
@@ -74,6 +70,7 @@ const get = async ({
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
+        lang: locale,
       },
       validateStatus: () => true,
       timeout: timeoutMS || 30000,
@@ -98,7 +95,7 @@ const put = async ({
   data,
   headers,
   timeoutMS,
-  isNoToken,
+  locale,
 }: AxiosPut): Promise<any> => {
   try {
     const config: any = {
@@ -106,6 +103,7 @@ const put = async ({
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
+        lang: locale,
       },
       url: Links.mainUrl + url,
       timeout: timeoutMS || 30000,
@@ -127,6 +125,7 @@ const deleteMethod = async ({
   headers,
   timeoutMS,
   pureData,
+  locale,
 }: AxiosDelete): Promise<any> => {
   try {
     const config: any = {
@@ -135,6 +134,7 @@ const deleteMethod = async ({
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
+        lang: locale,
       },
       validateStatus: () => true,
       timeout: timeoutMS || 30000,

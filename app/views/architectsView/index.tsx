@@ -8,18 +8,22 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { getStyle } from "./styles";
-import { ParamListBase, useNavigation } from "@react-navigation/native";
+import {
+  ParamListBase,
+  useIsFocused,
+  useNavigation,
+} from "@react-navigation/native";
 import { GermanSymbol } from "../../assets/svg/germanSymbol";
 import { COLORS } from "../../config";
 import { MenuButton } from "../../components/menuButton";
 import { BackButton } from "../../components/backButton";
-import { faker } from "@faker-js/faker";
 import { ROUTES } from "../../modules/navigation/routes";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { DrawerNavigationProp } from "@react-navigation/drawer";
 import { useDispatch } from "react-redux";
 import { getArchitects } from "../../modules/saga/architects/action";
 import { useAppSelector } from "../../hooks/useAppSelector";
+import { useAppContext } from "../../services/config/configAppContext";
 
 interface Props {}
 
@@ -29,19 +33,15 @@ export const ArchitectsView: FC<Props> = memo(({}: Props) => {
   const drawerNavigation: DrawerNavigationProp<ParamListBase> = useNavigation();
   const dispatch = useDispatch();
   const { architects } = useAppSelector((state) => state.Architects);
+  const isFocused = useIsFocused();
 
   useEffect(() => {
     dispatch(getArchitects());
-  }, []);
+  }, [isFocused]);
 
-  const mockBuildings = Array.from({ length: 7 }, () => ({
-    images: Array.from({ length: 4 }, () => ({
-      link: faker.image.urlPicsumPhotos({ width: 184, height: 184 }),
-    })),
-    title: faker.person.fullName(),
-    date: "1960-02-08 - 2000-05-11",
-    info: faker.lorem.paragraphs({ min: 20, max: 200 }),
-  }));
+  const {
+    LocalizationContext: { translation },
+  } = useAppContext();
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.grayFour }}>
@@ -54,9 +54,8 @@ export const ArchitectsView: FC<Props> = memo(({}: Props) => {
             <MenuButton onPress={() => drawerNavigation.openDrawer()} />
           </View>
           <GermanSymbol width={36} height={70} />
-          <Text style={styles.logoText}>{"German Embassy \nBaku"}</Text>
         </View>
-        <Text style={styles.welcome}>Architects</Text>
+        <Text style={styles.welcome}>{translation("architects")}</Text>
         <FlatList
           data={architects}
           numColumns={2}

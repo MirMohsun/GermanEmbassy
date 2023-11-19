@@ -1,7 +1,13 @@
 import React, { FC, useMemo, useRef } from "react";
-import { Image, Modal, Text, View, useWindowDimensions } from "react-native";
+import {
+  ActivityIndicator,
+  Image,
+  Modal,
+  Text,
+  View,
+  useWindowDimensions,
+} from "react-native";
 import { getStyle } from "./styles";
-import { useDispatch } from "react-redux";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { FlatList } from "react-native-gesture-handler";
 import Animated, {
@@ -9,9 +15,12 @@ import Animated, {
   useSharedValue,
 } from "react-native-reanimated";
 import PaginationDot from "react-native-insta-pagination-dots";
-import { FONTS } from "../../config";
 import moment from "moment";
 import { CloseButton } from "../closeButton";
+import { useAppContext } from "../../services/config/configAppContext";
+import { useNavigation } from "@react-navigation/native";
+import { ROUTES } from "../../modules/navigation/routes";
+import FastImage from "react-native-fast-image";
 
 interface Props {
   modal: {
@@ -23,12 +32,16 @@ interface Props {
 }
 
 export const MapModal: FC<Props> = ({ modal }) => {
-  const dispatch = useDispatch();
   const { width } = useWindowDimensions();
   const { top } = useSafeAreaInsets();
   const flatList = useRef<FlatList>(null);
   const progress = useSharedValue(0);
   const styles = useMemo(() => getStyle(width, top), [width, top]);
+  const navigation = useNavigation();
+
+  const {
+    LocalizationContext: { translation },
+  } = useAppContext();
 
   const handleCloseModal = () => {
     modal.closeModal();
@@ -36,14 +49,20 @@ export const MapModal: FC<Props> = ({ modal }) => {
 
   const onScrollEvent = useAnimatedScrollHandler({
     onScroll: (event) => {
-      console.log("event", event);
       progress.value = event.contentOffset.x;
     },
   });
 
-  const imgGallery = modal?.additionalData?.building?.gallery?.map(
-    (item: { img_url: any }) => item.img_url
-  );
+  const imgGallery = modal?.additionalData?.building?.gallery
+    ?.map((item: { img_url: any }) => item.img_url)
+    .splice(0, 3);
+
+  const handleBuildingPress = () => {
+    navigation.navigate(ROUTES.BuildingPreView, {
+      item: modal?.additionalData?.building,
+    });
+    modal.closeModal();
+  };
 
   return (
     <>
@@ -51,25 +70,10 @@ export const MapModal: FC<Props> = ({ modal }) => {
         animationType="fade"
         transparent
         visible={modal.isVisible}
-        onRequestClose={modal.closeModal}
+        onRequestClose={handleCloseModal}
       >
-        <View
-          style={{
-            flex: 1,
-            alignItems: "center",
-            justifyContent: "center",
-            backgroundColor: "rgba(0,0,0,0.5)",
-          }}
-        >
-          <View
-            style={{
-              width: "90%",
-              height: "60%",
-              backgroundColor: "white",
-              alignSelf: "center",
-              borderRadius: 16,
-            }}
-          >
+        <View style={styles.overlay}>
+          <View style={styles.container}>
             <View style={styles.imagesWrapper}>
               <View style={styles.backButtonWrapper}>
                 <CloseButton onPress={modal.closeModal} />
@@ -81,97 +85,48 @@ export const MapModal: FC<Props> = ({ modal }) => {
                   pagingEnabled
                   bounces={false}
                   ref={flatList}
+                  ListEmptyComponent={<ActivityIndicator />}
                   showsHorizontalScrollIndicator={false}
                   data={imgGallery}
                   renderItem={({ item }) => {
                     return (
-                      <Image
-                        source={{ uri: item }}
+                      <FastImage
                         style={styles.img}
-                        resizeMode="cover"
+                        source={{
+                          uri: item,
+                          priority: FastImage.priority.normal,
+                        }}
                       />
                     );
                   }}
                 />
               ) : null}
               <View style={styles.paginator}>
-                {modal?.additionalData?.building?.gallery !== null ? (
-                  <PaginationDot
-                    activeDotColor={"#FFF"}
-                    maxPage={imgGallery?.length}
-                  />
-                ) : null}
+                {modal?.additionalData?.building?.gallery !== null
+                  ? imgGallery?.map(() => (
+                      <View
+                        style={{
+                          width: 8,
+                          height: 8,
+                          borderRadius: 8,
+                          backgroundColor: "white",
+                          marginHorizontal: 6,
+                        }}
+                      />
+                    ))
+                  : null}
               </View>
             </View>
-            <View style={{ width: "90%", alignSelf: "center" }}>
-              <Text
-                style={{
-                  fontFamily: FONTS.sfpMedium,
-                  fontSize: 18,
-                  fontWeight: "700",
-                  lineHeight: 21,
-                  letterSpacing: 0.01,
-                  textAlign: "left",
-                }}
-              >
+            <View style={styles.titleContainer}>
+              <Text style={styles.title} onPress={handleBuildingPress}>
                 {modal?.additionalData?.building?.name}
               </Text>
-              <View style={{ flexDirection: "row", marginVertical: 12 }}>
-                <Text
-                  style={{
-                    fontFamily: FONTS.sfpRegular,
-                    fontSize: 14,
-                    fontWeight: "500",
-                    lineHeight: 17,
-                    letterSpacing: 0.04,
-                    textAlign: "left",
-                  }}
-                >
-                  ARCHITECT:
+              <View style={styles.rowContainer}>
+                <Text style={styles.rowLeft}>
+                  {translation("architect").toUpperCase()}:
                 </Text>
-                <Text
-                  style={{
-                    fontFamily: FONTS.sfpRegular,
-                    fontSize: 14,
-                    fontWeight: "600",
-                    lineHeight: 17,
-                    letterSpacing: 0.04,
-                    textAlign: "left",
-                  }}
-                >
+                <Text style={styles.rowRight}>
                   {modal?.additionalData?.building?.architect?.name}
-                </Text>
-              </View>
-              <View style={{ flexDirection: "row" }}>
-                <Text
-                  style={{
-                    fontFamily: FONTS.sfpRegular,
-                    fontSize: 14,
-                    fontWeight: "500",
-                    lineHeight: 17,
-                    letterSpacing: 0.04,
-                    textAlign: "left",
-                  }}
-                >
-                  DATE:
-                </Text>
-                <Text
-                  style={{
-                    fontFamily: FONTS.sfpRegular,
-                    fontSize: 14,
-                    fontWeight: "600",
-                    lineHeight: 17,
-                    letterSpacing: 0.04,
-                    textAlign: "left",
-                  }}
-                >
-                  {moment(
-                    modal?.additionalData?.building?.architect?.birth_date
-                  ).format("YYYY")}{" "}
-                  -{" "}
-                  {moment(
-                    modal?.additionalData?.building?.architect?.death_date
-                  ).format("YYYY")}
                 </Text>
               </View>
             </View>

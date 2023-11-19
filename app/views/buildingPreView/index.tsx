@@ -9,7 +9,7 @@ import {
   ScrollView,
 } from "react-native";
 import { getStyle } from "./styles";
-import { RouteProp } from "@react-navigation/native";
+import { RouteProp, useNavigation } from "@react-navigation/native";
 import Animated, {
   useAnimatedScrollHandler,
   useSharedValue,
@@ -20,8 +20,9 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import LinearGradient from "react-native-linear-gradient";
 import { ArrowIcon } from "../../assets/svg/arrowIcon";
 import HTML from "react-native-render-html";
-import moment from "moment";
-import { CloseButton } from "../../components/closeButton";
+import { useAppContext } from "../../services/config/configAppContext";
+import FastImage from "react-native-fast-image";
+import { ROUTES } from "../../modules/navigation/routes";
 
 interface Props {
   route: RouteProp<any>;
@@ -34,10 +35,16 @@ export const BuildingPreView: FC<Props> = memo(({ route }: Props) => {
   const flatList = useRef<FlatList>(null);
   const progress = useSharedValue(0);
   const [isMore, setIsMore] = useState(false);
+  const navigation = useNavigation();
+
   const styles = useMemo(
     () => getStyle(width, top, isMore),
     [width, top, isMore]
   );
+
+  const {
+    LocalizationContext: { translation },
+  } = useAppContext();
 
   const tagsStyles = {
     p: {
@@ -71,12 +78,20 @@ export const BuildingPreView: FC<Props> = memo(({ route }: Props) => {
             showsHorizontalScrollIndicator={false}
             data={imgGallery}
             renderItem={({ item }) => {
-              return <Image source={{ uri: item }} style={styles.img} />;
+              return (
+                <FastImage
+                  style={styles.img}
+                  source={{
+                    uri: item,
+                    priority: FastImage.priority.normal,
+                  }}
+                />
+              );
             }}
           />
         ) : null}
         <View style={styles.backButtonWrapper}>
-          <CloseButton />
+          <BackButton />
         </View>
         <View style={styles.paginator}>
           {item.gallery ? (
@@ -87,28 +102,39 @@ export const BuildingPreView: FC<Props> = memo(({ route }: Props) => {
       <View style={styles.content}>
         <ScrollView
           showsVerticalScrollIndicator={false}
-          style={{ marginTop: 20 }}
           contentContainerStyle={{ paddingBottom: isMore ? 140 : 30 }}
         >
           <Text style={styles.title}>{item?.name}</Text>
           <View style={styles.divider} />
           <View style={styles.architectWrapper}>
-            <Image
-              source={{ uri: item?.architect?.gallery[0]?.src }}
+            <FastImage
               style={styles.cover}
+              source={{
+                uri: item?.architect?.gallery[0]?.src,
+                priority: FastImage.priority.normal,
+              }}
+              resizeMode={FastImage.resizeMode.contain}
             />
             <View style={styles.architectNameWrapper}>
               <Text numberOfLines={1} style={styles.label}>
-                ARCHITECTS:
+                {translation("architects").toUpperCase()}:
               </Text>
-              <Text numberOfLines={4} style={styles.info}>
+              <Text
+                numberOfLines={4}
+                style={styles.info}
+                onPress={() =>
+                  navigation.navigate(ROUTES.ArchitectsPreView, {
+                    item: item?.architect,
+                  })
+                }
+              >
                 {item?.architect?.name}
               </Text>
             </View>
           </View>
           <View style={styles.divider} />
           <Text numberOfLines={1} style={styles.label}>
-            INFO:
+            {translation("info").toUpperCase()}:
           </Text>
           <HTML tagsStyles={tagsStyles} source={{ html: item.info }} />
           <LinearGradient

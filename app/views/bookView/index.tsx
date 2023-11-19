@@ -18,6 +18,7 @@ import { DrawerNavigationProp } from "@react-navigation/drawer";
 import { useAppSelector } from "../../hooks/useAppSelector";
 import HTML from "react-native-render-html";
 import RNFetchBlob from "rn-fetch-blob";
+import { useAppContext } from "../../services/config/configAppContext";
 
 interface Props {}
 
@@ -29,7 +30,10 @@ export const BookView: FC<Props> = memo(({}: Props) => {
   const drawerNavigation: DrawerNavigationProp<ParamListBase> = useNavigation();
   const { bookInfo } = useAppSelector((state) => state.Book);
 
-  console.log("bookInfo", bookInfo);
+  const {
+    LocalizationContext: { translation },
+  } = useAppContext();
+
   const tagsStyles = {
     p: {
       color: "black",
@@ -60,7 +64,6 @@ export const BookView: FC<Props> = memo(({}: Props) => {
             <MenuButton onPress={() => drawerNavigation.openDrawer()} />
           </View>
           <GermanSymbol width={36} height={70} />
-          <Text style={styles.logoText}>{"German Embassy \nBaku"}</Text>
         </View>
         <Text style={styles.welcome}>{bookInfo?.title}</Text>
         <ScrollView
@@ -90,13 +93,13 @@ export const BookView: FC<Props> = memo(({}: Props) => {
               />
             </View>
           </View>
-          <Text style={styles.title}>INFO:</Text>
+          <Text style={styles.title}>{translation("info").toUpperCase()}:</Text>
           <HTML tagsStyles={tagsStyles} source={{ html: bookInfo?.content }} />
           <TouchableOpacity
             onPress={() => handleOnDownload()}
             style={styles.readButton}
           >
-            <Text style={styles.readTitle}>Read book</Text>
+            <Text style={styles.readTitle}>{translation("readBook")}</Text>
           </TouchableOpacity>
         </ScrollView>
       </View>

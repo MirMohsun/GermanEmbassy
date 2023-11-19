@@ -13,6 +13,8 @@ import { RouteView } from "../../views/routeView";
 import { LanguagesView } from "../../views/languagesView";
 import { ArchitectsPreView } from "../../views/architectsPreView";
 import { CustomDrawerContent } from "./customDrawer";
+import { OnBoardingView } from "../../views/onBoardingView";
+import { MainStackNavigator } from "./stackNavigation";
 
 const Drawer = createDrawerNavigator();
 
@@ -34,23 +36,7 @@ export const DrawerNavigatorComponent = () => {
       drawerContent={CustomDrawerContent}
       screenOptions={navigationOptions}
     >
-      <Drawer.Screen name={ROUTES.MainView} component={MainView} />
-      <Drawer.Screen name={ROUTES.BuildingsView} component={BuildingsView} />
-      <Drawer.Screen name={ROUTES.ArchitectsView} component={ArchitectsView} />
-      <Drawer.Screen
-        name={ROUTES.BuildingPreView}
-        component={BuildingPreView}
-      />
-      <Drawer.Screen name={ROUTES.AboutUsView} component={AboutUsView} />
-      <Drawer.Screen name={ROUTES.LegalView} component={LegalView} />
-      <Drawer.Screen name={ROUTES.ContactView} component={ContactView} />
-      <Drawer.Screen name={ROUTES.BookView} component={BookView} />
-      <Drawer.Screen name={ROUTES.RouteView} component={RouteView} />
-      <Drawer.Screen name={ROUTES.LanguagesView} component={LanguagesView} />
-      <Drawer.Screen
-        name={ROUTES.ArchitectsPreView}
-        component={ArchitectsPreView}
-      />
+      <Drawer.Screen name={"StackNavigation"} component={MainStackNavigator} />
     </Drawer.Navigator>
   );
 };

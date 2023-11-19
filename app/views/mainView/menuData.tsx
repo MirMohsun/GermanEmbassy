@@ -10,32 +10,32 @@ export const menuData = [
   {
     icon: <Path3Icon />,
     goTo: ROUTES.RouteView,
-    title: "Route - A",
+    title: "routeA",
   },
   {
     icon: <Path3Icon color="#F03939" />,
     goTo: ROUTES.RouteView,
-    title: "Route - B",
+    title: "routeB",
   },
   {
     icon: <BookIcon />,
     goTo: ROUTES.BookView,
-    title: "Book pdf",
+    title: "book",
   },
 
   {
     icon: <BuildingIcon />,
     goTo: ROUTES.BuildingsView,
-    title: "Buildings",
+    title: "buildings",
   },
   {
     icon: <PeopleIcon />,
     goTo: ROUTES.ArchitectsView,
-    title: "Architects",
+    title: "architects",
   },
   {
     icon: <GovernmentIcon />,
     goTo: ROUTES.AboutUsView,
-    title: "About us",
+    title: "aboutUs",
   },
 ];
