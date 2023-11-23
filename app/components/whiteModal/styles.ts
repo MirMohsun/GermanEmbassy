@@ -86,6 +86,7 @@ export const getStyle = (width: number, top: number) => {
       textAlign: "left",
       marginLeft: 4,
       marginBottom: 4,
+      maxWidth: "75%",
     },
   });
   return styles;
