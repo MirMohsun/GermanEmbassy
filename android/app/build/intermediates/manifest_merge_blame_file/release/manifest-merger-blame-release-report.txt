@@ -1,6 +1,6 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-3    package="com.germanembassybaku"
+3    package="com.germanheritagebaku"
 4    android:versionCode="1"
 5    android:versionName="1.0" >
 6
@@ -64,7 +64,7 @@
 36
 37    <application
 37-->/Users/admin/Desktop/GermanEmbassy/android/app/src/main/AndroidManifest.xml:9:5-32:19
-38        android:name="com.germanembassybaku.MainApplication"
+38        android:name="com.germanheritagebaku.MainApplication"
 38-->/Users/admin/Desktop/GermanEmbassy/android/app/src/main/AndroidManifest.xml:10:7-38
 39        android:allowBackup="false"
 39-->/Users/admin/Desktop/GermanEmbassy/android/app/src/main/AndroidManifest.xml:14:7-34
@@ -87,7 +87,7 @@
 48
 49        <activity
 49-->/Users/admin/Desktop/GermanEmbassy/android/app/src/main/AndroidManifest.xml:19:7-31:18
-50            android:name="com.germanembassybaku.MainActivity"
+50            android:name="com.germanheritagebaku.MainActivity"
 50-->/Users/admin/Desktop/GermanEmbassy/android/app/src/main/AndroidManifest.xml:20:9-37
 51            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
 51-->/Users/admin/Desktop/GermanEmbassy/android/app/src/main/AndroidManifest.xml:22:9-118
@@ -119,7 +119,7 @@
 65-->[:rn-fetch-blob] /Users/admin/Desktop/GermanEmbassy/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:32:9-40:20
 66            android:name="com.RNFetchBlob.Utils.FileProvider"
 66-->[:rn-fetch-blob] /Users/admin/Desktop/GermanEmbassy/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:33:13-62
-67            android:authorities="com.germanembassybaku.provider"
+67            android:authorities="com.germanheritagebaku.provider"
 67-->[:rn-fetch-blob] /Users/admin/Desktop/GermanEmbassy/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:34:13-60
 68            android:exported="false"
 68-->[:rn-fetch-blob] /Users/admin/Desktop/GermanEmbassy/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/release/AndroidManifest.xml:35:13-37
@@ -166,7 +166,7 @@
 91-->[androidx.work:work-runtime:2.7.1] /Users/admin/.gradle/caches/transforms-3/4bf77253fb4d852d6e7fd284597ee5ab/transformed/work-runtime-2.7.1/AndroidManifest.xml:31:9-39:20
 92            android:name="androidx.startup.InitializationProvider"
 92-->[androidx.work:work-runtime:2.7.1] /Users/admin/.gradle/caches/transforms-3/4bf77253fb4d852d6e7fd284597ee5ab/transformed/work-runtime-2.7.1/AndroidManifest.xml:32:13-67
-93            android:authorities="com.germanembassybaku.androidx-startup"
+93            android:authorities="com.germanheritagebaku.androidx-startup"
 93-->[androidx.work:work-runtime:2.7.1] /Users/admin/.gradle/caches/transforms-3/4bf77253fb4d852d6e7fd284597ee5ab/transformed/work-runtime-2.7.1/AndroidManifest.xml:33:13-68
 94            android:exported="false" >
 94-->[androidx.work:work-runtime:2.7.1] /Users/admin/.gradle/caches/transforms-3/4bf77253fb4d852d6e7fd284597ee5ab/transformed/work-runtime-2.7.1/AndroidManifest.xml:34:13-37

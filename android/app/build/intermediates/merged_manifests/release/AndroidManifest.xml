@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.germanembassybaku"
+    package="com.germanheritagebaku"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -35,7 +35,7 @@
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <application
-        android:name="com.germanembassybaku.MainApplication"
+        android:name="com.germanheritagebaku.MainApplication"
         android:allowBackup="false"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:icon="@mipmap/ic_launcher"
@@ -47,7 +47,7 @@
             android:value="AIzaSyA50vK_B6DpwnDzDpHrhlKJPJZFEemXOg0" />
 
         <activity
-            android:name="com.germanembassybaku.MainActivity"
+            android:name="com.germanheritagebaku.MainActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
             android:exported="true"
             android:label="@string/app_name"
@@ -64,7 +64,7 @@
 
         <provider
             android:name="com.RNFetchBlob.Utils.FileProvider"
-            android:authorities="com.germanembassybaku.provider"
+            android:authorities="com.germanheritagebaku.provider"
             android:exported="false"
             android:grantUriPermissions="true" >
             <meta-data
@@ -90,7 +90,7 @@
 
         <provider
             android:name="androidx.startup.InitializationProvider"
-            android:authorities="com.germanembassybaku.androidx-startup"
+            android:authorities="com.germanheritagebaku.androidx-startup"
             android:exported="false" >
             <meta-data
                 android:name="androidx.work.WorkManagerInitializer"

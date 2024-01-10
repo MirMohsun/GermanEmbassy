@@ -25,13 +25,11 @@ import { StackNavigationProp } from "@react-navigation/stack";
 import { BackButton } from "../../components/backButton";
 import { useAppSelector } from "../../hooks/useAppSelector";
 import { ROUTES } from "../../modules/navigation/routes";
-import MapViewDirections from "react-native-maps-directions";
 import { useModal } from "../../services/hooks/useModal";
 import { MapModal } from "../../components/whiteModal";
 import { RouteItem } from "../../components/routeItem";
 import { Path3Icon } from "../../assets/svg/path3Icon";
 import { PathTabIcon } from "../../assets/svg/pathTabIcon";
-import RoundedLines from "./roundedPoliline";
 
 interface Props {}
 

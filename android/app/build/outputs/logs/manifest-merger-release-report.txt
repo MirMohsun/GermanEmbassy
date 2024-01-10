@@ -199,7 +199,7 @@ ADDED from /Users/admin/Desktop/GermanEmbassy/android/app/src/main/AndroidManife
 		ADDED from /Users/admin/Desktop/GermanEmbassy/android/app/src/main/AndroidManifest.xml:18:11-66
 	android:name
 		ADDED from /Users/admin/Desktop/GermanEmbassy/android/app/src/main/AndroidManifest.xml:17:11-56
-activity#com.germanembassybaku.MainActivity
+activity#com.germanheritagebaku.MainActivity
 ADDED from /Users/admin/Desktop/GermanEmbassy/android/app/src/main/AndroidManifest.xml:19:7-31:18
 	android:label
 		ADDED from /Users/admin/Desktop/GermanEmbassy/android/app/src/main/AndroidManifest.xml:21:9-41

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.germanembassybaku.app-mergeReleaseResources-33:/values-fr-rCA/values-fr-rCA.xml",
+            "outputFile": "com.germanheritagebaku.app-mergeReleaseResources-33:/values-fr-rCA/values-fr-rCA.xml",
             "map": [
                 {
                     "source": "/Users/admin/.gradle/caches/transforms-3/583792d2258f161199baa18f314df075/transformed/jetified-play-services-basement-18.1.0/res/values-fr-rCA/values.xml",

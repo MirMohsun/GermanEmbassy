@@ -2,7 +2,7 @@
   <library
       name="/Users/admin/Desktop/GermanEmbassy/android@@:react-native-community_art::release"
       jars="/Users/admin/Desktop/GermanEmbassy/node_modules/@react-native-community/art/android/build/.transforms/b495b39a8cb2240a4640f3a7581d57d4/transformed/out/jars/classes.jar:/Users/admin/Desktop/GermanEmbassy/node_modules/@react-native-community/art/android/build/.transforms/b495b39a8cb2240a4640f3a7581d57d4/transformed/out/jars/libs/R.jar"
-      resolved="GermanEmbassyBaku:react-native-community_art:unspecified"
+      resolved="GermanHeritageBaku:react-native-community_art:unspecified"
       folder="/Users/admin/Desktop/GermanEmbassy/node_modules/@react-native-community/art/android/build/.transforms/b495b39a8cb2240a4640f3a7581d57d4/transformed/out"
       manifest="AndroidManifest.xml"
       resFolder="res"
@@ -15,7 +15,7 @@
   <library
       name="/Users/admin/Desktop/GermanEmbassy/android@@:react-native-pager-view::release"
       jars="/Users/admin/Desktop/GermanEmbassy/node_modules/react-native-pager-view/android/build/.transforms/8518365621778d988824835e10168872/transformed/out/jars/classes.jar:/Users/admin/Desktop/GermanEmbassy/node_modules/react-native-pager-view/android/build/.transforms/8518365621778d988824835e10168872/transformed/out/jars/libs/R.jar"
-      resolved="GermanEmbassyBaku:react-native-pager-view:unspecified"
+      resolved="GermanHeritageBaku:react-native-pager-view:unspecified"
       folder="/Users/admin/Desktop/GermanEmbassy/node_modules/react-native-pager-view/android/build/.transforms/8518365621778d988824835e10168872/transformed/out"
       manifest="AndroidManifest.xml"
       resFolder="res"
@@ -54,7 +54,7 @@
   <library
       name="/Users/admin/Desktop/GermanEmbassy/android@@:react-native-clipboard_clipboard::release"
       jars="/Users/admin/Desktop/GermanEmbassy/node_modules/@react-native-clipboard/clipboard/android/build/.transforms/9258d4e69215b575dcc966faa50df04b/transformed/out/jars/classes.jar:/Users/admin/Desktop/GermanEmbassy/node_modules/@react-native-clipboard/clipboard/android/build/.transforms/9258d4e69215b575dcc966faa50df04b/transformed/out/jars/libs/R.jar"
-      resolved="GermanEmbassyBaku:react-native-clipboard_clipboard:unspecified"
+      resolved="GermanHeritageBaku:react-native-clipboard_clipboard:unspecified"
       folder="/Users/admin/Desktop/GermanEmbassy/node_modules/@react-native-clipboard/clipboard/android/build/.transforms/9258d4e69215b575dcc966faa50df04b/transformed/out"
       manifest="AndroidManifest.xml"
       resFolder="res"
@@ -67,7 +67,7 @@
   <library
       name="/Users/admin/Desktop/GermanEmbassy/android@@:react-native-community_masked-view::release"
       jars="/Users/admin/Desktop/GermanEmbassy/node_modules/@react-native-community/masked-view/android/build/.transforms/99bae9c8e01de8b76af615ca8a1f4711/transformed/out/jars/classes.jar:/Users/admin/Desktop/GermanEmbassy/node_modules/@react-native-community/masked-view/android/build/.transforms/99bae9c8e01de8b76af615ca8a1f4711/transformed/out/jars/libs/R.jar"
-      resolved="GermanEmbassyBaku:react-native-community_masked-view:unspecified"
+      resolved="GermanHeritageBaku:react-native-community_masked-view:unspecified"
       folder="/Users/admin/Desktop/GermanEmbassy/node_modules/@react-native-community/masked-view/android/build/.transforms/99bae9c8e01de8b76af615ca8a1f4711/transformed/out"
       manifest="AndroidManifest.xml"
       resFolder="res"
@@ -80,7 +80,7 @@
   <library
       name="/Users/admin/Desktop/GermanEmbassy/android@@:react-native-community_netinfo::release"
       jars="/Users/admin/Desktop/GermanEmbassy/node_modules/@react-native-community/netinfo/android/build/.transforms/24097fccb0470f70b58b4ce03a07aaa0/transformed/out/jars/classes.jar:/Users/admin/Desktop/GermanEmbassy/node_modules/@react-native-community/netinfo/android/build/.transforms/24097fccb0470f70b58b4ce03a07aaa0/transformed/out/jars/libs/R.jar"
-      resolved="GermanEmbassyBaku:react-native-community_netinfo:unspecified"
+      resolved="GermanHeritageBaku:react-native-community_netinfo:unspecified"
       folder="/Users/admin/Desktop/GermanEmbassy/node_modules/@react-native-community/netinfo/android/build/.transforms/24097fccb0470f70b58b4ce03a07aaa0/transformed/out"
       manifest="AndroidManifest.xml"
       resFolder="res"
@@ -93,7 +93,7 @@
   <library
       name="/Users/admin/Desktop/GermanEmbassy/android@@:react-native-fast-image::release"
       jars="/Users/admin/Desktop/GermanEmbassy/node_modules/react-native-fast-image/android/build/.transforms/e089f3bca26edd9cff3f2a6e6f3ac03e/transformed/out/jars/classes.jar:/Users/admin/Desktop/GermanEmbassy/node_modules/react-native-fast-image/android/build/.transforms/e089f3bca26edd9cff3f2a6e6f3ac03e/transformed/out/jars/libs/R.jar"
-      resolved="GermanEmbassyBaku:react-native-fast-image:unspecified"
+      resolved="GermanHeritageBaku:react-native-fast-image:unspecified"
       folder="/Users/admin/Desktop/GermanEmbassy/node_modules/react-native-fast-image/android/build/.transforms/e089f3bca26edd9cff3f2a6e6f3ac03e/transformed/out"
       manifest="AndroidManifest.xml"
       resFolder="res"
@@ -106,7 +106,7 @@
   <library
       name="/Users/admin/Desktop/GermanEmbassy/android@@:react-native-gesture-handler::release"
       jars="/Users/admin/Desktop/GermanEmbassy/node_modules/react-native-gesture-handler/android/build/.transforms/22c77d4ef24874217a297f689447bad0/transformed/out/jars/classes.jar:/Users/admin/Desktop/GermanEmbassy/node_modules/react-native-gesture-handler/android/build/.transforms/22c77d4ef24874217a297f689447bad0/transformed/out/jars/libs/R.jar"
-      resolved="GermanEmbassyBaku:react-native-gesture-handler:unspecified"
+      resolved="GermanHeritageBaku:react-native-gesture-handler:unspecified"
       folder="/Users/admin/Desktop/GermanEmbassy/node_modules/react-native-gesture-handler/android/build/.transforms/22c77d4ef24874217a297f689447bad0/transformed/out"
       manifest="AndroidManifest.xml"
       resFolder="res"
@@ -119,7 +119,7 @@
   <library
       name="/Users/admin/Desktop/GermanEmbassy/android@@:react-native-linear-gradient::release"
       jars="/Users/admin/Desktop/GermanEmbassy/node_modules/react-native-linear-gradient/android/build/.transforms/257c24f8c6bf963263e2235e38689e91/transformed/out/jars/classes.jar:/Users/admin/Desktop/GermanEmbassy/node_modules/react-native-linear-gradient/android/build/.transforms/257c24f8c6bf963263e2235e38689e91/transformed/out/jars/libs/R.jar"
-      resolved="GermanEmbassyBaku:react-native-linear-gradient:unspecified"
+      resolved="GermanHeritageBaku:react-native-linear-gradient:unspecified"
       folder="/Users/admin/Desktop/GermanEmbassy/node_modules/react-native-linear-gradient/android/build/.transforms/257c24f8c6bf963263e2235e38689e91/transformed/out"
       manifest="AndroidManifest.xml"
       resFolder="res"
@@ -132,7 +132,7 @@
   <library
       name="/Users/admin/Desktop/GermanEmbassy/android@@:react-native-maps::release"
       jars="/Users/admin/Desktop/GermanEmbassy/node_modules/react-native-maps/android/build/.transforms/23e698e81635fff8142fc34e8fd85b00/transformed/out/jars/classes.jar:/Users/admin/Desktop/GermanEmbassy/node_modules/react-native-maps/android/build/.transforms/23e698e81635fff8142fc34e8fd85b00/transformed/out/jars/libs/R.jar"
-      resolved="GermanEmbassyBaku:react-native-maps:unspecified"
+      resolved="GermanHeritageBaku:react-native-maps:unspecified"
       folder="/Users/admin/Desktop/GermanEmbassy/node_modules/react-native-maps/android/build/.transforms/23e698e81635fff8142fc34e8fd85b00/transformed/out"
       manifest="AndroidManifest.xml"
       resFolder="res"
@@ -145,7 +145,7 @@
   <library
       name="/Users/admin/Desktop/GermanEmbassy/android@@:react-native-reanimated::release"
       jars="/Users/admin/Desktop/GermanEmbassy/node_modules/react-native-reanimated/android/build/.transforms/1c1613fff70d72e2e7704de12357ca34/transformed/out/jars/classes.jar:/Users/admin/Desktop/GermanEmbassy/node_modules/react-native-reanimated/android/build/.transforms/1c1613fff70d72e2e7704de12357ca34/transformed/out/jars/libs/R.jar"
-      resolved="GermanEmbassyBaku:react-native-reanimated:unspecified"
+      resolved="GermanHeritageBaku:react-native-reanimated:unspecified"
       folder="/Users/admin/Desktop/GermanEmbassy/node_modules/react-native-reanimated/android/build/.transforms/1c1613fff70d72e2e7704de12357ca34/transformed/out"
       manifest="AndroidManifest.xml"
       resFolder="res"
@@ -158,7 +158,7 @@
   <library
       name="/Users/admin/Desktop/GermanEmbassy/android@@:react-native-safe-area-context::release"
       jars="/Users/admin/Desktop/GermanEmbassy/node_modules/react-native-safe-area-context/android/build/.transforms/1be84ca29537546979be92c63ba53acd/transformed/out/jars/classes.jar:/Users/admin/Desktop/GermanEmbassy/node_modules/react-native-safe-area-context/android/build/.transforms/1be84ca29537546979be92c63ba53acd/transformed/out/jars/libs/R.jar"
-      resolved="GermanEmbassyBaku:react-native-safe-area-context:unspecified"
+      resolved="GermanHeritageBaku:react-native-safe-area-context:unspecified"
       folder="/Users/admin/Desktop/GermanEmbassy/node_modules/react-native-safe-area-context/android/build/.transforms/1be84ca29537546979be92c63ba53acd/transformed/out"
       manifest="AndroidManifest.xml"
       resFolder="res"
@@ -171,7 +171,7 @@
   <library
       name="/Users/admin/Desktop/GermanEmbassy/android@@:react-native-screens::release"
       jars="/Users/admin/Desktop/GermanEmbassy/node_modules/react-native-screens/android/build/.transforms/346a1467ad758bd2779f00bba097866a/transformed/out/jars/classes.jar:/Users/admin/Desktop/GermanEmbassy/node_modules/react-native-screens/android/build/.transforms/346a1467ad758bd2779f00bba097866a/transformed/out/jars/libs/R.jar"
-      resolved="GermanEmbassyBaku:react-native-screens:unspecified"
+      resolved="GermanHeritageBaku:react-native-screens:unspecified"
       folder="/Users/admin/Desktop/GermanEmbassy/node_modules/react-native-screens/android/build/.transforms/346a1467ad758bd2779f00bba097866a/transformed/out"
       manifest="AndroidManifest.xml"
       resFolder="res"
@@ -184,7 +184,7 @@
   <library
       name="/Users/admin/Desktop/GermanEmbassy/android@@:react-native-svg::release"
       jars="/Users/admin/Desktop/GermanEmbassy/node_modules/react-native-svg/android/build/.transforms/1a9de1ce2fed585a01dfb5ce9aec619a/transformed/out/jars/classes.jar:/Users/admin/Desktop/GermanEmbassy/node_modules/react-native-svg/android/build/.transforms/1a9de1ce2fed585a01dfb5ce9aec619a/transformed/out/jars/libs/R.jar"
-      resolved="GermanEmbassyBaku:react-native-svg:unspecified"
+      resolved="GermanHeritageBaku:react-native-svg:unspecified"
       folder="/Users/admin/Desktop/GermanEmbassy/node_modules/react-native-svg/android/build/.transforms/1a9de1ce2fed585a01dfb5ce9aec619a/transformed/out"
       manifest="AndroidManifest.xml"
       resFolder="res"
@@ -197,7 +197,7 @@
   <library
       name="/Users/admin/Desktop/GermanEmbassy/android@@:rn-fetch-blob::release"
       jars="/Users/admin/Desktop/GermanEmbassy/node_modules/rn-fetch-blob/android/build/.transforms/93bbfafccc293a2559b8aeb122f5f7bc/transformed/out/jars/classes.jar:/Users/admin/Desktop/GermanEmbassy/node_modules/rn-fetch-blob/android/build/.transforms/93bbfafccc293a2559b8aeb122f5f7bc/transformed/out/jars/libs/R.jar"
-      resolved="GermanEmbassyBaku:rn-fetch-blob:unspecified"
+      resolved="GermanHeritageBaku:rn-fetch-blob:unspecified"
       folder="/Users/admin/Desktop/GermanEmbassy/node_modules/rn-fetch-blob/android/build/.transforms/93bbfafccc293a2559b8aeb122f5f7bc/transformed/out"
       manifest="AndroidManifest.xml"
       resFolder="res"

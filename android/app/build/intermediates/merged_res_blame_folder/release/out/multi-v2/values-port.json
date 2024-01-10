@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.germanembassybaku.app-mergeReleaseResources-33:/values-port/values-port.xml",
+            "outputFile": "com.germanheritagebaku.app-mergeReleaseResources-33:/values-port/values-port.xml",
             "map": [
                 {
                     "source": "/Users/admin/.gradle/caches/transforms-3/e277725dd0c6789a8a8a68fc178734e5/transformed/appcompat-1.4.1/res/values-port/values-port.xml",

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.germanembassybaku.app-mergeReleaseResources-33:/values-pl/values-pl.xml",
+            "outputFile": "com.germanheritagebaku.app-mergeReleaseResources-33:/values-pl/values-pl.xml",
             "map": [
                 {
                     "source": "/Users/admin/.gradle/caches/transforms-3/1876e2a37e9dad33ee2aa885ea801eeb/transformed/jetified-play-services-base-18.1.0/res/values-pl/values.xml",

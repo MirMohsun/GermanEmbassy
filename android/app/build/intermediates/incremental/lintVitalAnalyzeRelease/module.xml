@@ -3,7 +3,7 @@
     dir="/Users/admin/Desktop/GermanEmbassy/android/app"
     name=":app"
     type="APP"
-    maven="GermanEmbassyBaku:app:"
+    maven="GermanHeritageBaku:app:"
     gradle="7.4.2"
     buildFolder="build"
     bootClassPath="/Users/admin/Library/Android/sdk/platforms/android-33/android.jar:/Users/admin/Library/Android/sdk/build-tools/30.0.3/core-lambda-stubs.jar"

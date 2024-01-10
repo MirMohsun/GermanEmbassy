@@ -1,4 +1,4 @@
-#Wed Nov 22 22:25:21 AZT 2023
+#Wed Dec 06 18:36:08 AZT 2023
 base.1=/Users/admin/Desktop/GermanEmbassy/android/app/build/intermediates/dex/release/mergeDexRelease/classes2.dex
 path.1=classes2.dex
 base.0=/Users/admin/Desktop/GermanEmbassy/android/app/build/intermediates/dex/release/mergeDexRelease/classes.dex
